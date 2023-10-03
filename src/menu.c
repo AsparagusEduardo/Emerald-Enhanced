@@ -97,34 +97,34 @@ const u8 sTextColors[] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DAR
 
 // Table of move info icon offsets in graphics/interface_fr/menu.png
 static const struct MenuInfoIcon sMenuInfoIcons[] =
-    {
-        // { width, height, offset }
-        {12, 12, 0x00}, // Unused
-        [TYPE_NORMAL + 1] = {32, 12, 0x20},
-        [TYPE_FIGHTING + 1] = {32, 12, 0x64},
-        [TYPE_FLYING + 1] = {32, 12, 0x60},
-        [TYPE_POISON + 1] = {32, 12, 0x80},
-        [TYPE_GROUND + 1] = {32, 12, 0x48},
-        [TYPE_ROCK + 1] = {32, 12, 0x44},
-        [TYPE_BUG + 1] = {32, 12, 0x6C},
-        [TYPE_GHOST + 1] = {32, 12, 0x68},
-        [TYPE_STEEL + 1] = {32, 12, 0x88},
-        [TYPE_MYSTERY + 1] = {32, 12, 0xA4},
-        [TYPE_FIRE + 1] = {32, 12, 0x24},
-        [TYPE_WATER + 1] = {32, 12, 0x28},
-        [TYPE_GRASS + 1] = {32, 12, 0x2C},
-        [TYPE_ELECTRIC + 1] = {32, 12, 0x40},
-        [TYPE_PSYCHIC + 1] = {32, 12, 0x84},
-        [TYPE_ICE + 1] = {32, 12, 0x4C},
-        [TYPE_DRAGON + 1] = {32, 12, 0xA0},
-        [TYPE_DARK + 1] = {32, 12, 0x8C},
-        [MENU_INFO_ICON_TYPE] = {42, 12, 0xA8},
-        [MENU_INFO_ICON_POWER] = {42, 12, 0xC0},
-        [MENU_INFO_ICON_ACCURACY] = {42, 12, 0xC8},
-        [MENU_INFO_ICON_PP] = {42, 12, 0xE0},
-        [MENU_INFO_ICON_EFFECT] = {42, 12, 0xE8},  // Unused
-        [MENU_INFO_ICON_BALL_RED] = {8, 8, 0xAE},  // For placed decorations in Secret Base
-        [MENU_INFO_ICON_BALL_BLUE] = {8, 8, 0xAF}, // For placed decorations in player's room
+{   // { width, height, offset }
+    { 12, 12, 0x00 },  // Unused
+    [TYPE_NORMAL + 1]   = { 32, 12, 0x20 },
+    [TYPE_FIGHTING + 1] = { 32, 12, 0x64 },
+    [TYPE_FLYING + 1]   = { 32, 12, 0x60 },
+    [TYPE_POISON + 1]   = { 32, 12, 0x80 },
+    [TYPE_GROUND + 1]   = { 32, 12, 0x48 },
+    [TYPE_ROCK + 1]     = { 32, 12, 0x44 },
+    [TYPE_BUG + 1]      = { 32, 12, 0x6C },
+    [TYPE_GHOST + 1]    = { 32, 12, 0x68 },
+    [TYPE_STEEL + 1]    = { 32, 12, 0x88 },
+    [TYPE_MYSTERY + 1]  = { 32, 12, 0xA4 },
+    [TYPE_FIRE + 1]     = { 32, 12, 0x24 },
+    [TYPE_WATER + 1]    = { 32, 12, 0x28 },
+    [TYPE_GRASS + 1]    = { 32, 12, 0x2C },
+    [TYPE_ELECTRIC + 1] = { 32, 12, 0x40 },
+    [TYPE_PSYCHIC + 1]  = { 32, 12, 0x84 },
+    [TYPE_ICE + 1]      = { 32, 12, 0x4C },
+    [TYPE_DRAGON + 1]   = { 32, 12, 0xA0 },
+    [TYPE_DARK + 1]     = { 32, 12, 0x8C },
+    [TYPE_FAIRY + 1]    = { 32, 12, 0x4  },
+    [MENU_INFO_ICON_TYPE]      = { 42, 12, 0xA8 },
+    [MENU_INFO_ICON_POWER]     = { 42, 12, 0xC0 },
+    [MENU_INFO_ICON_ACCURACY]  = { 42, 12, 0xC8 },
+    [MENU_INFO_ICON_PP]        = { 42, 12, 0xE0 },
+    [MENU_INFO_ICON_EFFECT]    = { 42, 12, 0xE8 }, // Unused
+    [MENU_INFO_ICON_BALL_RED]  = {  8,  8, 0xAE }, // For placed decorations in Secret Base
+    [MENU_INFO_ICON_BALL_BLUE] = {  8,  8, 0xAF }, // For placed decorations in player's room
 };
 
 // Forward declarations
@@ -2116,7 +2116,7 @@ void sub_819A080(const struct Bitmap *src, struct Bitmap *dst, u16 srcX, u16 src
 {
     int loopSrcY, loopDstY, loopSrcX, loopDstX, xEnd, yEnd, multiplierSrcY, multiplierDstY;
     const u8 *pixelsSrc;
-    u16 *pixelsDst;
+    u8 *pixelsDst;
     u16 toOrr;
 
     if (dst->width - dstX < width)
@@ -2137,55 +2137,52 @@ void sub_819A080(const struct Bitmap *src, struct Bitmap *dst, u16 srcX, u16 src
         for (loopSrcX = srcX, loopDstX = dstX; loopSrcX < xEnd; loopSrcX++, loopDstX++)
         {
             pixelsSrc = src->pixels + ((loopSrcX >> 1) & 3) + ((loopSrcX >> 3) << 5) + (((loopSrcY >> 3) * multiplierSrcY) << 5) + ((u32)(loopSrcY << 0x1d) >> 0x1B);
-            pixelsDst = (void *)dst->pixels + ((loopDstX >> 1) & 3) + ((loopDstX >> 3) << 5) + (((loopDstY >> 3) * multiplierDstY) << 5) + ((u32)(loopDstY << 0x1d) >> 0x1B);
+            pixelsDst = (void *) dst->pixels + ((loopDstX >> 1) & 3) + ((loopDstX >> 3) << 5) + ((( loopDstY >> 3) * multiplierDstY) << 5) + ((u32)(loopDstY << 0x1d) >> 0x1B);
 
             if ((uintptr_t)pixelsDst & 0x1)
             {
-                pixelsDst = (void *)(pixelsDst)-1;
+                pixelsDst--;
                 if (loopDstX & 0x1)
                 {
-                    toOrr = *pixelsDst & 0x0fff;
+                    toOrr = *(vu16*)pixelsDst;
+                    toOrr &= 0x0fff;
                     if (loopSrcX & 0x1)
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0xf0) << 8);
+                        toOrr |= ((*pixelsSrc & 0xf0) << 8);
                     else
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0x0f) << 12);
+                        toOrr |= ((*pixelsSrc & 0x0f) << 12);
                 }
                 else
                 {
-                    toOrr = *pixelsDst & 0xf0ff;
+                    toOrr = *(vu16*)pixelsDst;
+                    toOrr &= 0xf0ff;
                     if (loopSrcX & 0x1)
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0xf0) << 4);
+                        toOrr |= ((*pixelsSrc & 0xf0) << 4);
                     else
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0x0f) << 8);
+                        toOrr |= ((*pixelsSrc & 0x0f) << 8);
                 }
             }
             else
             {
                 if (loopDstX & 1)
                 {
-                    toOrr = *pixelsDst & 0xff0f;
+                    toOrr = *(vu16*)pixelsDst;
+                    toOrr &= 0xff0f;
                     if (loopSrcX & 1)
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0xf0) << 0);
+                        toOrr |= ((*pixelsSrc & 0xf0) << 0);
                     else
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0x0f) << 4);
+                        toOrr |= ((*pixelsSrc & 0x0f) << 4);
                 }
                 else
                 {
-                    toOrr = *pixelsDst & 0xfff0;
+                    toOrr = *(vu16*)pixelsDst;
+                    toOrr &= 0xfff0;
                     if (loopSrcX & 1)
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0xf0) >> 4);
+                        toOrr |= ((*pixelsSrc & 0xf0) >> 4);
                     else
-                        *pixelsDst = toOrr | ((*pixelsSrc & 0x0f) >> 0);
+                        toOrr |= ((*pixelsSrc & 0x0f) >> 0);
                 }
             }
-
-// Needed to match, urgh.
-#ifndef NONMATCHING
-            asm("" ::
-                    : "r4");
-            pixelsDst++;
-            pixelsDst--;
-#endif // NONMATCHING
+            *(vu16*)pixelsDst = toOrr;
         }
     }
 }

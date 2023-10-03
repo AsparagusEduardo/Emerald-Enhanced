@@ -1072,7 +1072,7 @@ int ChangeDarmanitanForm(void)
 {
     u8 i;
     u16 darmi = SPECIES_DARMANITAN;
-    u16 darm2 = SPECIES_DARMANITAN_ZEN;
+    u16 darm2 = SPECIES_DARMANITAN_ZEN_MODE;
     u8 hasDarmi = 0;
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -1083,7 +1083,7 @@ int ChangeDarmanitanForm(void)
             CalculateMonStats(&gPlayerParty[i]);
             return hasDarmi;
         }
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_DARMANITAN_ZEN)
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_DARMANITAN_ZEN_MODE)
         {
             hasDarmi = 2;
             SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &darmi);
@@ -1294,7 +1294,8 @@ int RyuChooseRandomGhostId(void)
     do
     {
        val = (Random() % ((NUM_SPECIES) - 1));
-    }while (!((gBaseStats[val].type1 == TYPE_GHOST) || (gBaseStats[val].type2 == TYPE_GHOST)) || (IS_ULTRA_BEAST(val) || IS_MEGA_EVOLVED(val)));
+    } while (!((gBaseStats[val].type1 == TYPE_GHOST) || (gBaseStats[val].type2 == TYPE_GHOST))
+            || ((gBaseStats[val].flags & F_ULTRA_BEAST) || IS_MEGA_EVOLVED(val)));
     gSpecialVar_0x8005 = val;
 
     return val;
@@ -2068,7 +2069,7 @@ void giveContestMon(void)
         MOVE_FUTURE_SIGHT
     };
     
-    CreateMonWithNature(&gPlayerParty[slot], SPECIES_MEGA_RAYQUAZA, 100, 31, NATURE_ADAMANT);
+    CreateMonWithNature(&gPlayerParty[slot], SPECIES_RAYQUAZA_MEGA, 100, 31, NATURE_ADAMANT);
     SetMonData(&gPlayerParty[slot], MON_DATA_SMART, &stat);
     SetMonData(&gPlayerParty[slot], MON_DATA_TOUGH, &stat);
     SetMonData(&gPlayerParty[slot], MON_DATA_COOL, &stat);

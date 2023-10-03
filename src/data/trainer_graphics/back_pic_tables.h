@@ -22,26 +22,30 @@ const struct MonCoords gTrainerBackPicCoords[] =
 // this table goes functionally unused, since none of these pics are compressed
 // and the place they would get extracted to gets overwritten later anyway
 // the casts are so they'll play nice with the strict struct definition
+#define TRAINER_BACK_SPRITE(trainerPic, sprite, size) [TRAINER_BACK_PIC_##trainerPic] = {(const u32 *)sprite, size, TRAINER_BACK_PIC_##trainerPic}
+
 const struct CompressedSpriteSheet gTrainerBackPicTable[] =
 {
-    (const u32 *)gTrainerBackPic_Brendan, 0x2000, TRAINER_BACK_PIC_BRENDAN,
-    (const u32 *)gTrainerBackPic_Dawn, 0x2000, TRAINER_BACK_PIC_DAWN,
-    (const u32 *)gTrainerBackPic_Red, 0x2800, TRAINER_BACK_PIC_RED,
-    (const u32 *)gTrainerBackPic_Leaf, 0x2800, TRAINER_BACK_PIC_LEAF,
-    (const u32 *)gTrainerBackPic_RubySapphireBrendan, 0x2000, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN,
-    (const u32 *)gTrainerBackPic_RubySapphireMay, 0x2000, TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY,
-    (const u32 *)gTrainerBackPic_Wally, 0x2000, TRAINER_BACK_PIC_WALLY,
-    (const u32 *)gTrainerBackPic_Steven, 0x2000, TRAINER_BACK_PIC_STEVEN,
-    (const u32 *)gTrainerBackPic_Shelly, 0x2000, TRAINER_BACK_PIC_SHELLY,
-    (const u32 *)gTrainerBackPic_Lanette, 0x2000, TRAINER_BACK_PIC_LANETTE,
-    (const u32 *)gTrainerBackPic_Minnie, 0x2000, TRAINER_BACK_PIC_MINNIE,
-    (const u32 *)gTrainerBackPic_Courtney, 0x2000, TRAINER_BACK_PIC_COURTNEY,
-    (const u32 *)gTrainerBackPic_Nurse, 0x2000, TRAINER_BACK_PIC_NURSE,
-    (const u32 *)gTrainerBackPic_Gold, 0x2000, TRAINER_BACK_PIC_GOLD,
-    (const u32 *)gTrainerBackPic_Krystal, 0x2000, TRAINER_BACK_PIC_KRYSTAL,
-    (const u32 *)gTrainerBackPic_Lucy, 0x2000, TRAINER_BACK_PIC_LUCY,
-    (const u32 *)gTrainerBackPic_Mom, 0x2000, TRAINER_BACK_PIC_MOM,
+    TRAINER_BACK_SPRITE(BRENDAN, gTrainerBackPic_Brendan, 0x2000),
+    TRAINER_BACK_SPRITE(DAWN, gTrainerBackPic_Dawn, 0x2000),
+    TRAINER_BACK_SPRITE(RED, gTrainerBackPic_Red, 0x2800),
+    TRAINER_BACK_SPRITE(LEAF, gTrainerBackPic_Leaf, 0x2800),
+    TRAINER_BACK_SPRITE(RUBY_SAPPHIRE_BRENDAN, gTrainerBackPic_RubySapphireBrendan, 0x2000),
+    TRAINER_BACK_SPRITE(RUBY_SAPPHIRE_MAY, gTrainerBackPic_RubySapphireMay, 0x2000),
+    TRAINER_BACK_SPRITE(WALLY, gTrainerBackPic_Wally, 0x2000),
+    TRAINER_BACK_SPRITE(STEVEN, gTrainerBackPic_Steven, 0x2000),
+    TRAINER_BACK_SPRITE(SHELLY, gTrainerBackPic_Shelly, 0x2000),
+    TRAINER_BACK_SPRITE(LANETTE, gTrainerBackPic_Lanette, 0x2000),
+    TRAINER_BACK_SPRITE(MINNIE, gTrainerBackPic_Minnie, 0x2000),
+    TRAINER_BACK_SPRITE(COURTNEY, gTrainerBackPic_Courtney, 0x2000),
+    TRAINER_BACK_SPRITE(NURSE, gTrainerBackPic_Nurse, 0x2000),
+    TRAINER_BACK_SPRITE(GOLD, gTrainerBackPic_Gold, 0x2000),
+    TRAINER_BACK_SPRITE(KRYSTAL, gTrainerBackPic_Krystal, 0x2000),
+    TRAINER_BACK_SPRITE(LUCY, gTrainerBackPic_Lucy, 0x2000),
+    TRAINER_BACK_SPRITE(MOM, gTrainerBackPic_Mom, 0x2000),
 };
+
+#define TRAINER_BACK_PAL(trainerPic, pal) [TRAINER_BACK_PIC_##trainerPic] = {pal, TRAINER_BACK_PIC_##trainerPic}
 
 const struct CompressedSpritePalette gTrainerBackPicPaletteTable[] =
 {

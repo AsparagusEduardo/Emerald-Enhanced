@@ -32,6 +32,7 @@ build/
 .vscode/
 *.a
 .fuse_hidden*
+*.sna
 pokeemerald.ss1
 pokeemerald.ss2
 pokeemerald.ss3
@@ -46,5 +47,3 @@ pokeemerald.bps
 tools/poryscript
 data/maps/*/scripts.inc
 data/scripts/_poryscripts/*.inc
-
-

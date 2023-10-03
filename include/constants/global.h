@@ -35,9 +35,8 @@
 #define MODIFIER_DX               2 // 4-2 is FireRed DX and 5-2 is LeafGreen DX
 #define MODIFIER_CRYSTALDUST      3 // 4-3 is modified CrystalDust
 #define VERSION_CRYSTAL_DUST      3 // 4-3 is modified CrystalDust
-#define MODIFIER_EMERALD_ENHANCED 69// 4?-69? is Emerald Enhanced
+#define MODIFIER_EMERALD_ENHANCED 27// 3-27 is Emerald Enhanced
 #define VERSION_MODIFIER MODIFIER_EMERALD_ENHANCED
-#define ITEM_EXPANSION 1
 
 #define DAYCARE_MON_COUNT 2
 #define POKEBLOCKS_COUNT 40

@@ -1,4 +1,6 @@
 raw `
+.set LOCALID_STAIR_GRUNT, 9
+
 MossdeepCity_SpaceCenter_1F_MapScripts:: @ 8222F41
 	map_script ON_FRAME, SPC_CheckDevonQuest
 	map_script ON_WARP, SPC_OnWarpScripts1
@@ -277,7 +279,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_Grunt2:: @ 822321F
 	msgbox MossdeepCity_SpaceCenter_1F_Text_Grunt2Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_SPACE_CENTER_2, MossdeepCity_SpaceCenter_1F_Text_Grunt2Defeat
 	setflag FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F
-	applymovement 9, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs
+	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairs
 	waitmovement 0
 	release
 	end
@@ -289,7 +291,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_Grunt2Defeated:: @ 822326E
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsWest:: @ 8223278
-	applymovement 9, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsWest
+	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsWest
 	waitmovement 0
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 1
 	release
@@ -298,7 +300,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsWest:: @ 8223278
 @ Functionally unused by mistake. The movement is handled anyway after the switch (see above)
 @ This also means VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE can never be 3
 MossdeepCity_SpaceCenter_1F_EventScript_MoveGruntFromStairsEast:: @ 8223289
-	applymovement 9, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsEast
+	applymovement LOCALID_STAIR_GRUNT, MossdeepCity_SpaceCenter_1F_Movement_MoveGruntFromStairsEast
 	waitmovement 0
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE, 3
 	release

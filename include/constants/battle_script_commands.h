@@ -35,6 +35,7 @@
 #define sMOVE_EFFECT gBattleScripting + 0x2E
 #define sMULTIHIT_EFFECT gBattleScripting + 0x30
 #define sILLUSION_NICK_HACK gBattleScripting + 0x32
+#define sFIXED_ABILITY_POPUP gBattleScripting + 0x33
 
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
 
@@ -165,10 +166,12 @@
 #define VARIOUS_SET_LAST_USED_ITEM              99
 #define VARIOUS_PARALYZE_TYPE_IMMUNITY          100
 #define VARIOUS_JUMP_IF_ABSENT                  101
-#define VARIOUS_SET_ECLIPSE                     102
-#define VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER     103
-#define VARIOUS_JUMP_IF_SPECIES                 104
-#define VARIOUS_JUMP_IF_WEATHER_AFFECTED        105
+#define VARIOUS_DESTROY_ABILITY_POPUP           102
+#define VARIOUS_TOTEM_BOOST                     103
+#define VARIOUS_SET_ECLIPSE                     104
+#define VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER     105
+#define VARIOUS_JUMP_IF_SPECIES                 106
+#define VARIOUS_JUMP_IF_WEATHER_AFFECTED        107
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
@@ -178,8 +181,9 @@
 #define DMG_FULL_ATTACKER_HP       4
 #define DMG_CURR_ATTACKER_HP       5
 #define DMG_BIG_ROOT               6
-#define DMG_VAMPIRIC_BIG_ROOT      7
-#define DMG_1_2_ATTACKER_HP        8
+#define DMG_1_2_ATTACKER_HP        7
+#define DMG_RECOIL_FROM_IMMUNE     8 // Used to calculate recoil for the Gen 4 version of Jump Kick
+#define DMG_VAMPIRIC_BIG_ROOT      9
 
 // Cmd_jumpifcantswitch
 #define SWITCH_IGNORE_ESCAPE_PREVENTION   0x80

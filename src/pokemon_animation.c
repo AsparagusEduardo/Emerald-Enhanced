@@ -6,6 +6,7 @@
 #include "task.h"
 #include "trig.h"
 #include "util.h"
+#include "data.h"
 #include "constants/battle_anim.h"
 #include "constants/rgb.h"
 
@@ -571,7 +572,7 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_LATIOS] = BACK_ANIM_H_SLIDE_QUICK,
     [SPECIES_JIRACHI] = BACK_ANIM_CONCAVE_DOWN_ARC_SWAY_LARGE,
     [SPECIES_DEOXYS] = BACK_ANIM_SHRINK_GROW_2,
-    [SPECIES_CRYSTAL_ONIX] = BACK_ANIM_CONCAVE_DOWN_ARC_SWAY_LARGE,
+    [SPECIES_ONIX_CRYSTAL] = BACK_ANIM_CONCAVE_DOWN_ARC_SWAY_LARGE,
 };
 
 static const u8 sUnknown_0860AA64[][2] =
@@ -1043,6 +1044,14 @@ static void sub_817F77C(struct Sprite *sprite)
         sprite->oam.matrixNum |= (sprite->hFlip << 3);
         sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
     }
+#ifdef BUGFIX
+    else
+    {
+        // FIX: Reset these back to normal after they were changed so Poké Ball catch/release
+        // animations without a screen transition in between don't break
+        sprite->affineAnims = gUnknown_082FF694;
+    }
+#endif // BUGFIX
 }
 
 static void pokemonanimfunc_01(struct Sprite *sprite)

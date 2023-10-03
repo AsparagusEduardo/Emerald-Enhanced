@@ -1373,7 +1373,7 @@ static const struct SearchOptionText sDexSearchColorOptions[] =
     {},
 };
 
-static const struct SearchOptionText sDexSearchTypeOptions[] =
+static const struct SearchOptionText sDexSearchTypeOptions[NUMBER_OF_MON_TYPES + 1] = // + 2 for "None" and terminator, - 1 for Mystery
 {
     {gText_DexEmptyString, gText_DexSearchTypeNone},
     {gText_DexEmptyString, gTypeNames[TYPE_NORMAL]},
@@ -1408,7 +1408,7 @@ static const u8 sOrderOptions[] =
     ORDER_SMALLEST,
 };
 
-static const u8 sDexSearchTypeIds[] =
+static const u8 sDexSearchTypeIds[NUMBER_OF_MON_TYPES] =
 {
     TYPE_NONE,
     TYPE_NORMAL,
@@ -1583,9 +1583,6 @@ static void ResetPokedexView(struct PokedexView *pokedexView)
 
 void CB2_OpenPokedex(void)
 {
-    u8 *addr;
-    u32 size;
-
     switch (gMain.state)
     {
     case 0:
@@ -2948,7 +2945,15 @@ static void SpriteCB_PokedexListMonSprite(struct Sprite *sprite)
         u32 var;
 
         sprite->pos2.y = gSineTable[(u8)sprite->data[5]] * 76 / 256;
+        // UB: possible division by zero
+#ifdef UBFIX
+        if (gSineTable[sprite->data[5] + 64] != 0)
+            var = 0x10000 / gSineTable[sprite->data[5] + 64];
+        else
+            var = 0;
+#else
         var = 0x10000 / gSineTable[sprite->data[5] + 64];
+#endif //UBFIX
         if (var > 0xFFFF)
             var = 0xFFFF;
         SetOamMatrix(sprite->data[1] + 1, 0x100, 0, 0, var);

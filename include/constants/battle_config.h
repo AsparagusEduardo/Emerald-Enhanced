@@ -1,58 +1,41 @@
 #ifndef GUARD_CONSTANTS_BATTLE_CONFIG_H
 #define GUARD_CONSTANTS_BATTLE_CONFIG_H
 
-// Species with peculiar battle effects. Remove them if they're properly placed in constant/species.h
-/*#define SPECIES_DIALGA 0
-#define SPECIES_PALKIA 0
-#define SPECIES_GIRATINA 0
-#define SPECIES_CHERRIM 0
-#define SPECIES_ARCEUS 0
-#define SPECIES_SILVALLY 0
-#define SPECIES_GENESECT 0
-#define SPECIES_AEGISLASH 0
-#define SPECIES_AEGISLASH_BLADE 10000
-#define SPECIES_MIMIKYU 0
-#define SPECIES_MIMIKYU_BUSTED 10001
-#define SPECIES_MIMIKYU_BUSTED 10001
-#define SPECIES_DARMANITAN 0
-#define SPECIES_DARMANITAN_ZEN 10002
-#define SPECIES_MINIOR_CORE 0
-#define SPECIES_MINIOR 10003
-#define SPECIES_WISHIWASHI 0
-#define SPECIES_WISHIWASHI_SCHOOL 10004
-#define SPECIES_ZYGARDE 0 // 50%
-#define SPECIES_ZYGARDE_10 10005 // 10 %
-#define SPECIES_ZYGARDE_COMPLETE 10006 // 100 %*/
-
-
-// Items with peculiar battle effects. STOP REVERTING THIS CHANGE, THESE NEED TO NOT BE DEFINED FFS
-/*#ifndef ITEM_EXPANSION
-    #define ITEM_CHOPLE_BERRY   177
-    #define ITEM_KEBIA_BERRY    178
-    #define ITEM_SHUCA_BERRY    179
-    #define ITEM_COBA_BERRY     180
-    #define ITEM_PAYAPA_BERRY   181
-    #define ITEM_TANGA_BERRY    182
-    #define ITEM_CHARTI_BERRY   183
-    #define ITEM_KASIB_BERRY    184
-    #define ITEM_HABAN_BERRY    185
-    #define ITEM_COLBUR_BERRY   186
-    #define ITEM_BABIRI_BERRY   187
-    #define ITEM_CHILAN_BERRY   188
-    #define ITEM_ROSELI_BERRY   189
-    #define ITEM_MICLE_BERRY    197
-    #define ITEM_CUSTAP_BERRY   199
-    #define ITEM_JABOCA_BERRY   200
-    #define ITEM_ROWAP_BERRY    201
-    #define ITEM_KEE_BERRY      202
-    #define ITEM_MARANGA_BERRY  203
-    #define ITEM_OCCA_BERRY     204
-    #define ITEM_PASSHO_BERRY   205
-    #define ITEM_WACAN_BERRY    206
-    #define ITEM_RINDO_BERRY    207
-    #define ITEM_YACHE_BERRY    208
-    #define ITEM_GRISEOUS_ORB   369
-#endif*/
+// Species with peculiar battle effects.
+#ifndef POKEMON_EXPANSION
+    #define SPECIES_DIALGA                  0
+    #define SPECIES_PALKIA                  0
+    #define SPECIES_GIRATINA                0
+    #define SPECIES_CHERRIM                 0
+    #define SPECIES_ARCEUS                  0
+    #define SPECIES_SILVALLY                0
+    #define SPECIES_GENESECT                0
+    #define SPECIES_AEGISLASH               0
+    #define SPECIES_AEGISLASH_BLADE         10000
+    #define SPECIES_MIMIKYU                 0
+    #define SPECIES_MIMIKYU_BUSTED          10001
+    #define SPECIES_DARMANITAN              0
+    #define SPECIES_DARMANITAN_ZEN_MODE     10002
+    #define SPECIES_MINIOR_CORE_RED         0
+    #define SPECIES_MINIOR                  10003
+    #define SPECIES_MINIOR_CORE_BLUE        0
+    #define SPECIES_MINIOR_METEOR_BLUE      10004
+    #define SPECIES_MINIOR_CORE_GREEN       0
+    #define SPECIES_MINIOR_METEOR_GREEN     10005
+    #define SPECIES_MINIOR_CORE_INDIGO      0
+    #define SPECIES_MINIOR_METEOR_INDIGO    10006
+    #define SPECIES_MINIOR_CORE_ORANGE      0
+    #define SPECIES_MINIOR_METEOR_ORANGE    10007
+    #define SPECIES_MINIOR_CORE_VIOLET      0
+    #define SPECIES_MINIOR_METEOR_VIOLET    10008
+    #define SPECIES_MINIOR_CORE_YELLOW      0
+    #define SPECIES_MINIOR_METEOR_YELLOW    10009
+    #define SPECIES_WISHIWASHI              0
+    #define SPECIES_WISHIWASHI_SCHOOL       10010
+    #define SPECIES_ZYGARDE                 0     // 50%
+    #define SPECIES_ZYGARDE_10              10011 // 10 %
+    #define SPECIES_ZYGARDE_COMPLETE        10012 // 100 %
+#endif
 
 #ifndef GEN_3
     #define GEN_3 0
@@ -99,6 +82,9 @@
 #define B_DISABLE_TURNS             GEN_7 // Disable's turns. See Cmd_disablelastusedattack.
 #define B_INCINERATE_GEMS           GEN_7 // In Gen6+, Incinerate can destroy Gems.
 #define B_MINIMIZE_DMG_ACC          GEN_7 // In Gen6+, moves that causes double damage to minimized Pokémon will also skip accuracy checks.
+#define B_PP_REDUCED_BY_SPITE       GEN_6 // In Gen4+, Spite reduces the foe's last move's PP by 4, instead of 2 to 5.
+#define B_CAN_SPITE_FAIL            GEN_6 // In Gen4+, Spite can no longer fail if the foe's last move only has 1 remaining PP.
+#define B_CRASH_IF_TARGET_IMMUNE    GEN_6 // In Gen4+, The user of Jump Kick or Hi Jump Kick will "keep going and crash" if it attacks a target that is immune to the move.
 
 // Ability settings
 #define B_ABILITY_WEATHER           GEN_7 // In Gen5+, weather caused by abilities lasts the same amount of turns as induced from a move. Before, they lasted till the battle's end or weather change by a move.
@@ -112,9 +98,11 @@
 // Item settings
 #define B_HP_BERRIES                GEN_7 // In Gen4+, berries which restore hp activate immediately after hp drops to half. In gen3, the effect occurs at the end of the turn.
 #define B_BERRIES_INSTANT           GEN_7 // In Gen4+, most berries activate on battle start/switch-in if applicable. In gen3, they only activate either at the move end or turn end.
+#define B_X_ITEMS_BUFF              GEN_7 // In Gen7+, the X Items raise a stat by 2 stages instead of 1.
 
-// Flag settings.
-// To use the following features in scripting, replace the 0s with the flag ID you're assigning it to. Eg: Replace with FLAG_UNUSED_0x264 so you can use that flag for toggling the feature.
+// Flag settings
+// To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
+// Eg: Replace with FLAG_UNUSED_0x264 so you can use that flag to toggle the feature.
 #define B_FLAG_INVERSE_BATTLE       0     // If this flag is set, the battle's type effectiveness are inversed. For example, fire is super effective against water.
 #define B_FLAG_FORCE_DOUBLE_WILD    0     // If this flag is set, all land and surfing wild battles will be double battles.
 
@@ -131,27 +119,31 @@
 // Other
 #define B_DOUBLE_WILD_CHANCE        0     // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_SLEEP_TURNS               GEN_7 // In Gen5+, sleep lasts for 1-3 turns instead of 2-5 turns.
-#define B_PARALYZE_ELECTRIC         GEN_7 // In Gen6+, Electric type Pokémon can't be paralyzed.
-#define B_POWDER_GRASS              GEN_7 // In Gen6+, Grass type Pokémon are immune to powder and spore moves.
+#define B_PARALYZE_ELECTRIC         GEN_7 // In Gen6+, Electric-type Pokémon can't be paralyzed.
+#define B_POWDER_GRASS              GEN_7 // In Gen6+, Grass-type Pokémon are immune to powder and spore moves.
+#define B_STEEL_RESISTANCES         GEN_7 // In Gen6+, Steel-type Pokémon are no longer resistant to Dark and Ghost moves.
 
 #define B_BLIZZARD_HAIL             GEN_7 // In Gen4+, Blizzard bypasses accuracy checks if it's hailing.
 
 // Animation Settings
-#define B_NEW_SWORD_PARTICLE            TRUE    // update swords dance particle
-#define B_NEW_LEECH_SEED_PARTICLE       TRUE    //update leech seed's animation particle
-#define B_NEW_HORN_ATTACK_PARTICLE      TRUE    //update horn attack's horn
-#define B_NEW_LEAF_PARTICLE             TRUE    // update leaf particle
-#define B_NEW_EMBER_PARTICLES           TRUE    //updates ember fire particle
-#define B_NEW_MEAN_LOOK_PARTICLE        TRUE    //update mean look eye
-#define B_NEW_TEETH_PARTICLE            TRUE    //update bite/crunch teeth particle
-#define B_NEW_HANDS_FEET_PARTICLE       TRUE    //update chop/kick/punch particles
-#define B_NEW_SPIKES_PARTICLE           TRUE    //update spikes particle
-#define B_NEW_FLY_BUBBLE_PARTICLE       TRUE    //update fly 'bubble' particle
-#define B_NEW_CURSE_NAIL_PARTICLE       TRUE    //updates curse nail
+#define B_NEW_SWORD_PARTICLE            TRUE    // If set to TRUE, it updates Swords Dance's particle.
+#define B_NEW_LEECH_SEED_PARTICLE       TRUE    // If set to TRUE, it updates Leech Seed's animation particle.
+#define B_NEW_HORN_ATTACK_PARTICLE      TRUE    // If set to TRUE, it updates Horn Attack's horn particle.
+#define B_NEW_LEAF_PARTICLE             TRUE    // If set to TRUE, it updates leaf particle.
+#define B_NEW_EMBER_PARTICLES           TRUE    // If set to TRUE, it updates Ember's fire particle.
+#define B_NEW_MEAN_LOOK_PARTICLE        TRUE    // If set to TRUE, it updates Mean Look's eye particle.
+#define B_NEW_TEETH_PARTICLE            TRUE    // If set to TRUE, it updates Bite/Crunch teeth particle.
+#define B_NEW_HANDS_FEET_PARTICLE       TRUE    // If set to TRUE, it updates chop/kick/punch particles.
+#define B_NEW_SPIKES_PARTICLE           TRUE    // If set to TRUE, it updates Spikes particle.
+#define B_NEW_FLY_BUBBLE_PARTICLE       TRUE    // If set to TRUE, it updates Fly's 'bubble' particle.
+#define B_NEW_CURSE_NAIL_PARTICLE       TRUE    // If set to TRUE, it updates Curse's nail.
 #define B_NEW_BATON_PASS_BALL_PARTICLE  TRUE    // If set to TRUE, it updates Baton Pass' Poké Ball sprite.
 #define B_NEW_MORNING_SUN_STAR_PARTICLE TRUE    // If set to TRUE, it updates Morning Sun's star particles.
 #define B_NEW_IMPACT_PALETTE            TRUE    // If set to TRUE, it updates the basic 'hit' palette.
 #define B_NEW_SURF_PARTICLE_PALETTE     TRUE    // If set to TRUE, it updates Surf's wave palette.
 
-#define HIDE_HEALTHBOXES_DURING_ANIMS   TRUE    //if TRUE, hides healthboxes during move animations
+#define B_HIDE_HEALTHBOXES_DURING_ANIMS TRUE    // If set to TRUE, hides healthboxes during move animations.
+#define B_TERRAIN_BG_CHANGE             TRUE    // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
+#define B_ENABLE_DEBUG                  TRUE    // If set to TRUE, enables a debug menu to use in battles by pressing the Select button.
+
 #endif // GUARD_CONSTANTS_BATTLE_CONFIG_H

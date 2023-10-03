@@ -15,9 +15,6 @@
 
 #define UBFIX
 
-//remove special case defines for when NOT using Item Expansion
-#define ITEM_EXPANSION 1
-
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
@@ -27,7 +24,7 @@
 #define NAKED __attribute__((naked))
 
 // IDE support
-#if defined (__APPLE__) || defined (__CYGWIN__) || defined (_MSC_VER) || defined (__VSCODE__)
+#if defined(__APPLE__) || defined(__CYGWIN__) || defined(__INTELLISENSE__)
 #define _(x) x
 #define __(x) x
 
@@ -79,8 +76,6 @@
 // Rounding value for Q4.12 fixed-point format
 #define Q_4_12_ROUND ((1) << (12 - 1))
 #define UQ_4_12_ROUND ((1) << (12 - 1))
-
-#define POKEMON_SLOTS_NUMBER 808
 
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) >= (b) ? (a) : (b))
@@ -135,6 +130,7 @@
 //      then both BATTLE_ENGINE and POKEMON_EXPANSION must be defined here.
 #define BATTLE_ENGINE
 #define POKEMON_EXPANSION
+#define ITEM_EXPANSION
 
 #define ROUND_BITS_TO_BYTES(numBits)(((numBits) / 8) + (((numBits) % 8) ? 1 : 0))
 
@@ -284,11 +280,12 @@ struct BattleDomeTrainer
 };
 
 #define DOME_TOURNAMENT_TRAINERS_COUNT 16
+#define BATTLE_TOWER_RECORD_COUNT 5
 
 struct BattleFrontier
 {
     /*0x64C*/ struct EmeraldBattleTowerRecord towerPlayer;
-    /*0x738*/ struct EmeraldBattleTowerRecord towerRecords[5]; // From record mixing.
+    /*0x738*/ struct EmeraldBattleTowerRecord towerRecords[BATTLE_TOWER_RECORD_COUNT]; // From record mixing.
     /*0xBEB*/ struct BattleTowerInterview towerInterview;
     /*0xCA8*/ u8 challengeStatus;
     /*0xCA9*/ u8 lvlMode:2;

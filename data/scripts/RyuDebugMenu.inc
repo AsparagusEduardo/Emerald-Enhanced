@@ -760,7 +760,7 @@ RyuDebug_DevMonQuickStart::
 	@@
 	@@
 	setvar VAR_TEMP_A, NATURE_ADAMANT
-	setvar VAR_TEMP_B, SPECIES_MEGA_ABSOL
+	setvar VAR_TEMP_B, SPECIES_ABSOL_MEGA
 	setvar VAR_TEMP_C, 0
 	setvar VAR_TEMP_D, MON_FEMALE
 	setvar VAR_TEMP_E, ITEM_SCOPE_LENS

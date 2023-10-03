@@ -23,7 +23,7 @@
 #include "data.h"
 
 extern const struct SpritePalette sObjectEventSpritePalettes[];
-extern const struct SpritePalette gObjectEventPalette0;
+extern const struct SpritePalette gObjectEventPal_Npc1;
 
 // this file's functions
 static u8 CheckTrainer(u8 objectEventId);
@@ -405,15 +405,15 @@ static u8 CheckPathBetweenTrainerAndPlayer(struct ObjectEvent *trainerObj, u8 ap
     }
 
     // preserve mapobj_unk_19 before clearing.
-    unk19_temp = trainerObj->range.as_nybbles.x;
-    unk19b_temp = trainerObj->range.as_nybbles.y;
-    trainerObj->range.as_nybbles.x = 0;
-    trainerObj->range.as_nybbles.y = 0;
+    unk19_temp = trainerObj->rangeX;
+    unk19b_temp = trainerObj->rangeY;
+    trainerObj->rangeX = 0;
+    trainerObj->rangeY = 0;
 
     collision = GetCollisionAtCoords(trainerObj, x, y, direction);
 
-    trainerObj->range.as_nybbles.x = unk19_temp;
-    trainerObj->range.as_nybbles.y = unk19b_temp;
+    trainerObj->rangeX = unk19_temp;
+    trainerObj->rangeY = unk19b_temp;
     if (collision == 4)
         return approachDistance;
 
@@ -725,7 +725,7 @@ u8 FldEff_HeartIcon(void)
 {
     u8 spriteId;
 
-    LoadSpritePalette(&gObjectEventPalette0);
+    LoadSpritePalette(&gObjectEventPal_Npc1);
     spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HeartIcon, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)

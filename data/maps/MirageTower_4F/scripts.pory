@@ -31,7 +31,7 @@ MT_ShantiFormChangeQuery::
 	checkspecies SPECIES_DARMANITAN
 	compare VAR_RESULT, TRUE
 	goto_if_eq MT_PlayerhasDarmanitan
-	checkspecies SPECIES_DARMANITAN_ZEN
+	checkspecies SPECIES_DARMANITAN_ZEN_MODE
 	compare VAR_RESULT, TRUE
 	goto_if_eq MT_PlayerhasDarmanitan
 	msgbox MT_DontHaveDarmanitan

@@ -375,7 +375,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
                 .nature = NATURE_JOLLY,
                 .evs = {0, 252, 6, 252, 0, 0},
                 .ability = 0,
-                .moves = {MOVE_HI_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_FAKE_OUT, MOVE_BULLET_PUNCH},
+                .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_FAKE_OUT, MOVE_BULLET_PUNCH},
             },
         },
         // Gold Symbol.
@@ -417,7 +417,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
             {
                 .species = SPECIES_METANG,
                 .heldItem = ITEM_SITRUS_BERRY,
-                .fixedIV = 31,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
                 .evs = {0, 252, 252, 0, 6, 0},
                 .ability = 0,
@@ -426,7 +426,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
             {
                 .species = SPECIES_SKARMORY,
                 .heldItem = ITEM_SITRUS_BERRY,
-                .fixedIV = 31,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_IMPISH,
                 .evs = {252, 0, 0, 0, 6, 252},
                 .ability = 0,
@@ -435,7 +435,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
             {
                 .species = SPECIES_AGGRON,
                 .heldItem = ITEM_SITRUS_BERRY,
-                .fixedIV = 31,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 0, 0, 252, 6},
                 .ability = 0,
@@ -446,7 +446,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
             {
                 .species = SPECIES_METANG,
                 .heldItem = ITEM_SITRUS_BERRY,
-                .fixedIV = 31,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
                 .evs = {0, 252, 252, 0, 6, 0},
                 .ability = 0,
@@ -455,7 +455,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
             {
                 .species = SPECIES_SKARMORY,
                 .heldItem = ITEM_SITRUS_BERRY,
-                .fixedIV = 31,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_IMPISH,
                 .evs = {252, 0, 0, 0, 6, 252},
                 .ability = 0,
@@ -464,7 +464,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][MAX_FRONTIER_PARTY
             {
                 .species = SPECIES_AGGRON,
                 .heldItem = ITEM_SITRUS_BERRY,
-                .fixedIV = 31,
+                .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 0, 0, 252, 6},
                 .ability = 0,
@@ -783,7 +783,7 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
 const u16 gFrontierBannedSpecies[] =
 {
     SPECIES_ARTICUNO, SPECIES_ZAPDOS, SPECIES_MOLTRES, SPECIES_MEWTWO, SPECIES_MEW,
-    SPECIES_LUGIA, SPECIES_HO_OH, SPECIES_CELEBI, SPECIES_CRYSTAL_ONIX,
+    SPECIES_LUGIA, SPECIES_HO_OH, SPECIES_CELEBI, SPECIES_ONIX_CRYSTAL,
     SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_MANAPHY, 
     SPECIES_VICTINI, SPECIES_MELOETTA, SPECIES_MELOETTA_PIROUETTE,
     SPECIES_GENESECT, SPECIES_DIANCIE, SPECIES_HOOPA, SPECIES_HOOPA_UNBOUND,
@@ -796,13 +796,13 @@ const u16 gChallengeBannedSpecies[] =
 {
 
     SPECIES_ARTICUNO, SPECIES_ZAPDOS, SPECIES_MOLTRES, SPECIES_MEWTWO, SPECIES_MEW,
-    SPECIES_LUGIA, SPECIES_HO_OH, SPECIES_CELEBI, SPECIES_CRYSTAL_ONIX,
+    SPECIES_LUGIA, SPECIES_HO_OH, SPECIES_CELEBI, SPECIES_ONIX_CRYSTAL,
     SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_MANAPHY, 
     SPECIES_VICTINI, SPECIES_MELOETTA, SPECIES_MELOETTA_PIROUETTE,
     SPECIES_GENESECT, SPECIES_DIANCIE, SPECIES_HOOPA, SPECIES_HOOPA_UNBOUND,
     SPECIES_VOLCANION, SPECIES_MAGEARNA, SPECIES_NAGANADEL, SPECIES_ZERAORA,
     SPECIES_KYUREM_BLACK, SPECIES_KYUREM_WHITE, SPECIES_SHAYMIN_SKY, SPECIES_SUICUNE,
-    SPECIES_RAIKOU, SPECIES_ENTEI, SPECIES_PRIMAL_KYOGRE, SPECIES_MEGA_RAYQUAZA, 
+    SPECIES_RAIKOU, SPECIES_ENTEI, SPECIES_KYOGRE_PRIMAL, SPECIES_RAYQUAZA_MEGA, 
     SPECIES_REGIROCK, SPECIES_REGICE, SPECIES_REGIGIGAS, SPECIES_REGISTEEL,
     SPECIES_LATIAS, SPECIES_LATIOS, SPECIES_HEATRAN,  SPECIES_YVELTAL, 
     SPECIES_XERNEAS, SPECIES_ZYGARDE, SPECIES_ZYGARDE_10, SPECIES_ZYGARDE_COMPLETE,
@@ -811,7 +811,7 @@ const u16 gChallengeBannedSpecies[] =
     SPECIES_DEOXYS_DEFENSE, SPECIES_DEOXYS_SPEED, SPECIES_JIRACHI, SPECIES_ARCEUS,
     SPECIES_PALKIA, SPECIES_DIALGA, SPECIES_GIRATINA, SPECIES_TAPU_KOKO,
     SPECIES_TAPU_BULU, SPECIES_TAPU_FINI, SPECIES_TAPU_LELE, SPECIES_CRESSELIA,
-    SPECIES_PRIMAL_GROUDON, 0xFFFF
+    SPECIES_GROUDON_PRIMAL, 0xFFFF
 };
 
 static const u8 *const sRecordsWindowChallengeTexts[][2] =
@@ -1646,9 +1646,9 @@ static void ShowLinkContestResultsWindow(void)
     AddTextPrinterParameterized(gRecordsWindowId, 1, gText_Smart, x, 89, TEXT_SPEED_FF, NULL);
     AddTextPrinterParameterized(gRecordsWindowId, 1, gText_Tough, x, 105, TEXT_SPEED_FF, NULL);
 
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < CONTEST_CATEGORIES_COUNT; i++)
     {
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < CONTESTANT_COUNT; j++)
         {
             ConvertIntToDecimalStringN(gStringVar4, gSaveBlock2Ptr->contestLinkResults[i][j], STR_CONV_MODE_RIGHT_ALIGN, 4);
             AddTextPrinterParameterized(gRecordsWindowId, 1, gStringVar4, (j * 38) + 64, (i * 16) + 41, TEXT_SPEED_FF, NULL);
@@ -2481,13 +2481,21 @@ void ClearRankingHallRecords(void)
 {
     s32 i, j, k;
 
+    // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
+    #ifdef BUGFIX
+    u8 zero = 0;
+    #define ZERO (&zero)
+    #else
+    #define ZERO 0
+    #endif
+
     for (i = 0; i < HALL_FACILITIES_COUNT; i++)
     {
         for (j = 0; j < 2; j++)
         {
             for (k = 0; k < 3; k++)
             {
-                CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
+                CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, ZERO); 
                 gSaveBlock2Ptr->hallRecords1P[i][j][k].name[0] = EOS;
                 gSaveBlock2Ptr->hallRecords1P[i][j][k].winStreak = 0;
             }
@@ -2498,8 +2506,8 @@ void ClearRankingHallRecords(void)
     {
         for (k = 0; k < 3; k++)
         {
-            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id1, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
-            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id2, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
+            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id1, ZERO);
+            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id2, ZERO);
             gSaveBlock2Ptr->hallRecords2P[j][k].name1[0] = EOS;
             gSaveBlock2Ptr->hallRecords2P[j][k].name2[0] = EOS;
             gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;

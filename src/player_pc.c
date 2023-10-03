@@ -385,7 +385,7 @@ static void InitItemStorageMenu(u8 taskId, u8 var)
     windowTemplate.width = GetMaxWidthInMenuTable(gPCText_ItemPCOptionsText, 4);
     data[4] = AddWindow(&windowTemplate);
     SetStandardWindowBorderStyle(data[4], 0);
-    PrintMenuTable(data[4], 4, gPCText_ItemPCOptionsText);
+    PrintMenuTable(data[4], ARRAY_COUNT(gPCText_ItemPCOptionsText), gPCText_ItemPCOptionsText);
     InitMenuInUpperLeftCornerPlaySoundWhenAPressed(data[4], 4, var);
     ScheduleBgCopyTilemapToVram(0);
     ItemStorageMenuPrint(gPCText_OptionDescList[var]);
@@ -713,7 +713,6 @@ static void ItemStorage_ProcessWithdrawTossInput(u8 taskId)
     s16 *data;
     bool32 toss;
     u32 i, x;
-    u8 windowId;
     const u8* text;
 
     data = gTasks[taskId].data;

@@ -689,5 +689,5 @@ bool32 MatchCall_HasRematchId(u32 idx)
 
 void SetMatchCallRegisteredFlag(void)
 {
-    
+
 }

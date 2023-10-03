@@ -523,8 +523,19 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
     for (i = 0; i < INHERITED_IV_COUNT; i++)
     {
         // Randomly pick an IV from the available list and stop from being chosen again.
+        // BUG: Instead of removing the IV that was just picked, this
+        // removes position 0 (HP) then position 1 (DEF), then position 2. This is why HP and DEF
+        // have a lower chance to be inherited in Emerald and why the IV picked for inheritance can
+        // be repeated. Amusingly, FRLG and RS also got this wrong. They remove selectedIvs[i], which
+        // is not an index! This means that it can sometimes remove the wrong stat.
+        #ifndef BUGFIX
         selectedIvs[i] = availableIVs[Random() % (NUM_STATS - i)];
         RemoveIVIndexFromList(availableIVs, i);
+        #else
+        u8 index = Random() % (NUM_STATS - i);
+        selectedIvs[i] = availableIVs[index];
+        RemoveIVIndexFromList(availableIVs, index);
+        #endif
     }
 
     // Determine which parent each of the selected IVs should inherit from.
@@ -590,10 +601,7 @@ u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
     for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
     {
         if (gEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
-        {
-            // TODO: the curly braces around this if statement are required for a matching build.
             break;
-        }
 
         eggMoves[i] = gEggMoves[eggMoveIdx + i];
         numEggMoves++;
@@ -715,7 +723,7 @@ static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare
             *species = SPECIES_SNORLAX;
         else if (*species == SPECIES_HAPPINY && motherItem != ITEM_LUCK_INCENSE && fatherItem != ITEM_LUCK_INCENSE)
             *species = SPECIES_CHANSEY;
-        else if (*species == SPECIES_MIMEJR && motherItem != ITEM_ODD_INCENSE && fatherItem != ITEM_ODD_INCENSE)
+        else if (*species == SPECIES_MIME_JR && motherItem != ITEM_ODD_INCENSE && fatherItem != ITEM_ODD_INCENSE)
             *species = SPECIES_MR_MIME;
         else if (*species == SPECIES_BONSLY && motherItem != ITEM_ROCK_INCENSE && fatherItem != ITEM_ROCK_INCENSE)
             *species = SPECIES_SUDOWOODO;
@@ -839,7 +847,7 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     u8 metLocation;
     u8 isEgg;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 32, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;
@@ -866,7 +874,7 @@ static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *
     u8 language;
 
     personality = daycare->offspringPersonality;
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 32, TRUE, personality, OT_ID_PLAYER_ID, 0);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;

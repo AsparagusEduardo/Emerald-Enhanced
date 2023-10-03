@@ -70,6 +70,7 @@ static EWRAM_DATA u16 sMovingNpcMapId = 0;
 static EWRAM_DATA u16 sFieldEffectScriptId = 0;
 
 static u8 gBrailleWindowId;
+static bool8 gIsScriptedWildDouble;
 
 extern const SpecialFunc gSpecials[];
 extern const u8 *gStdScripts[];
@@ -1842,15 +1843,37 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     u16 species = (VarGet(ScriptReadHalfword(ctx)));
     u16 level = (VarGet(ScriptReadHalfword(ctx)));
     u16 item = (VarGet(ScriptReadHalfword(ctx)));
+    u16 species2 = (VarGet(ScriptReadHalfword(ctx)));
+    u16 level2 = (VarGet(ScriptReadHalfword(ctx)));
+    u16 item2 = (VarGet(ScriptReadHalfword(ctx)));
 
-    CreateScriptedWildMon(species, level, item);
+    if(species2 == SPECIES_NONE)
+    {
+        CreateScriptedWildMon(species, level, item);
+        gIsScriptedWildDouble = FALSE;
+    }
+    else
+    { 
+        CreateScriptedDoubleWildMon(species, level, item, species2, level2, item2);
+        gIsScriptedWildDouble = TRUE;
+    }
+
     return FALSE;
 }
 
 bool8 ScrCmd_dowildbattle(struct ScriptContext *ctx)
 {
-    BattleSetup_StartScriptedWildBattle();
-    ScriptContext1_Stop();
+    if(gIsScriptedWildDouble == FALSE)
+    {
+        BattleSetup_StartScriptedWildBattle();
+        ScriptContext1_Stop();
+    }
+    else
+    {
+        BattleSetup_StartScriptedDoubleWildBattle();
+        ScriptContext1_Stop();
+    }
+
     return TRUE;
 }
 
@@ -2214,7 +2237,9 @@ bool8 ScrCmd_gotoram(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_warpD1(struct ScriptContext *ctx)
+// Unused
+// For the warp used by the Aqua Hideout, see DoTeleportTileWarp
+bool8 ScrCmd_warpspinenter(struct ScriptContext *ctx)
 {
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
@@ -2223,7 +2248,7 @@ bool8 ScrCmd_warpD1(struct ScriptContext *ctx)
     u16 y = VarGet(ScriptReadHalfword(ctx));
 
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
-    sub_808D074(GetPlayerFacingDirection());
+    SetSpinStartFacingDir(GetPlayerFacingDirection());
     DoSpinEnterWarp();
     ResetInitialPlayerAvatarState();
     return TRUE;

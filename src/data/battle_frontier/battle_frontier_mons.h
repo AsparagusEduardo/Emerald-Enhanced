@@ -371,7 +371,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RIOLU] = { // Riolu-Copycat (ID: 41)
         .species = SPECIES_RIOLU,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_COPYCAT, MOVE_SWORDS_DANCE, MOVE_EE_PROTECT},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_COPYCAT, MOVE_SWORDS_DANCE, MOVE_EE_PROTECT},
         .heldItem = ITEM_EVIOLITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT,
@@ -488,7 +488,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MIENFOO] = { // Mienfoo-Scarf (ID: 54)
         .species = SPECIES_MIENFOO,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_U_TURN},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_U_TURN},
         .heldItem = ITEM_CHOICE_SCARF,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -946,7 +946,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_DARMANITAN_ZEN_1] = { // Darmanitan_Zen-Flamethrower (ID: 105)
-        .species = SPECIES_DARMANITAN_ZEN,
+        .species = SPECIES_DARMANITAN_ZEN_MODE,
         .moves = {MOVE_PSYCHIC, MOVE_GRAVEL_STORM, MOVE_FLAMETHROWER, MOVE_TRICK_ROOM},
         .heldItem = ITEM_WEAKNESS_POLICY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -1208,7 +1208,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SCRAFTY_1] = { // Scrafty-DD (ID: 134)
         .species = SPECIES_SCRAFTY,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_IRON_HEAD, MOVE_DRAGON_DANCE},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_IRON_HEAD, MOVE_DRAGON_DANCE},
         .heldItem = ITEM_SHELL_BELL,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -1828,7 +1828,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_DARMANITAN_ZEN_2] = { // Darmanitan_Zen-FocusBlast (ID: 203)
-        .species = SPECIES_DARMANITAN_ZEN,
+        .species = SPECIES_DARMANITAN_ZEN_MODE,
         .moves = {MOVE_PSYCHIC, MOVE_GRAVEL_STORM, MOVE_FOCUS_BLAST, MOVE_TRICK_ROOM},
         .heldItem = ITEM_WEAKNESS_POLICY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -2198,7 +2198,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_HITMONLEE_2] = { // Hitmonlee-LifeOrb (ID: 244)
         .species = SPECIES_HITMONLEE,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_MACH_PUNCH, MOVE_SUCKER_PUNCH},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_MACH_PUNCH, MOVE_SUCKER_PUNCH},
         .heldItem = ITEM_LIFE_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT,
@@ -3620,7 +3620,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_HAWLUCHA_1] = { // Hawlucha-Roost (ID: 300)
         .species = SPECIES_HAWLUCHA,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_ACROBATICS, MOVE_SWORDS_DANCE, MOVE_ROOST},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ACROBATICS, MOVE_SWORDS_DANCE, MOVE_ROOST},
         .heldItem = ITEM_FLYING_GEM,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT,
@@ -3773,7 +3773,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MIENSHAO_1] = { // Mienshao-SD (ID: 419)
         .species = SPECIES_MIENSHAO,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_ACROBATICS, MOVE_SWORDS_DANCE},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_ACROBATICS, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_FLYING_GEM,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -3935,7 +3935,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LOPUNNY_1] = { // Lopunny-3attacksHealingWish (ID: 437)
         .species = SPECIES_LOPUNNY,
-        .moves = {MOVE_FAKE_OUT, MOVE_RETURN, MOVE_HI_JUMP_KICK, MOVE_HEALING_WISH},
+        .moves = {MOVE_FAKE_OUT, MOVE_RETURN, MOVE_HIGH_JUMP_KICK, MOVE_HEALING_WISH},
         .heldItem = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -4205,7 +4205,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TSAREENA_1] = { // Tsareena-3attacks (ID: 467)
         .species = SPECIES_TSAREENA,
-        .moves = {MOVE_TROP_KICK, MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_SYNTHESIS},
+        .moves = {MOVE_TROP_KICK, MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_SYNTHESIS},
         .heldItem = ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT,
@@ -4538,7 +4538,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MEDICHAM_2] = { // Medicham-SD (ID: 606)
         .species = SPECIES_MEDICHAM,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_BULLET_PUNCH, MOVE_SWORDS_DANCE},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_BULLET_PUNCH, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -5456,7 +5456,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_HAWLUCHA_2] = { // Hawlucha-RockSlide (ID: 504)
         .species = SPECIES_HAWLUCHA,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_ACROBATICS, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_ACROBATICS, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_FLYING_GEM,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT,
@@ -5609,7 +5609,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MIENSHAO_2] = { // Mienshao-Scarf (ID: 623)
         .species = SPECIES_MIENSHAO,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_U_TURN},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_ROCK_SLIDE, MOVE_U_TURN},
         .heldItem = ITEM_CHOICE_SCARF,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -5771,7 +5771,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LOPUNNY_2] = { // Lopunny-4attacks (ID: 641)
         .species = SPECIES_LOPUNNY,
-        .moves = {MOVE_FAKE_OUT, MOVE_RETURN, MOVE_HI_JUMP_KICK, MOVE_QUICK_ATTACK},
+        .moves = {MOVE_FAKE_OUT, MOVE_RETURN, MOVE_HIGH_JUMP_KICK, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_SACHET,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -6041,7 +6041,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TSAREENA_2] = { // Tsareena-Band (ID: 671)
         .species = SPECIES_TSAREENA,
-        .moves = {MOVE_TROP_KICK, MOVE_HI_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_U_TURN},
+        .moves = {MOVE_TROP_KICK, MOVE_HIGH_JUMP_KICK, MOVE_KNOCK_OFF, MOVE_U_TURN},
         .heldItem = ITEM_CHOICE_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -6896,7 +6896,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_BLAZIKEN_3] = { // Blaziken-SashSD (ID: 766)
         .species = SPECIES_BLAZIKEN,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_BLAZE_KICK, MOVE_EE_PROTECT, MOVE_SWORDS_DANCE},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_BLAZE_KICK, MOVE_EE_PROTECT, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -6914,7 +6914,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_BLAZIKEN_4] = { // Blaziken-LifeOrbSD (ID: 768)
         .species = SPECIES_BLAZIKEN,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_FLARE_BLITZ, MOVE_EE_PROTECT, MOVE_SWORDS_DANCE},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_FLARE_BLITZ, MOVE_EE_PROTECT, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_LIFE_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -7525,7 +7525,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_VENUSAUR_1] = { // Mega_Venusaur-Defensive (ID: 836)
-        .species = SPECIES_MEGA_VENUSAUR,
+        .species = SPECIES_VENUSAUR_MEGA,
         .moves = {MOVE_GIGA_DRAIN, MOVE_ACID, MOVE_LEECH_SEED, MOVE_SYNTHESIS},
         .heldItem = ITEM_VENUSAURITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -7534,7 +7534,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_VENUSAUR_2] = { // Mega_Venusaur-Offensive (ID: 837)
-        .species = SPECIES_MEGA_VENUSAUR,
+        .species = SPECIES_VENUSAUR_MEGA,
         .moves = {MOVE_SLUDGE_BOMB, MOVE_GIGA_DRAIN, MOVE_ACID, MOVE_SYNTHESIS},
         .heldItem = ITEM_VENUSAURITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -7543,7 +7543,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_CHARIZARD_X_1] = { // Mega_Charizard_X-DD (ID: 838)
-        .species = SPECIES_MEGA_CHARIZARD_X,
+        .species = SPECIES_CHARIZARD_MEGA_X,
         .moves = {MOVE_FLARE_BLITZ, MOVE_DRAGON_CLAW, MOVE_DRAGON_DANCE, MOVE_ROOST},
         .heldItem = ITEM_CHARIZARDITE_X,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7552,7 +7552,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_CHARIZARD_X_2] = { // Mega_Charizard_X-SD (ID: 839)
-        .species = SPECIES_MEGA_CHARIZARD_X,
+        .species = SPECIES_CHARIZARD_MEGA_X,
         .moves = {MOVE_FLARE_BLITZ, MOVE_DRAGON_CLAW, MOVE_FLAME_CHARGE, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_CHARIZARDITE_X,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7561,7 +7561,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_CHARIZARD_Y_1] = { // Mega_Charizard_Y-3attacks (ID: 840)
-        .species = SPECIES_MEGA_CHARIZARD_Y,
+        .species = SPECIES_CHARIZARD_MEGA_Y,
         .moves = {MOVE_FIRE_BLAST, MOVE_SOLAR_BEAM, MOVE_FOCUS_BLAST, MOVE_ROOST},
         .heldItem = ITEM_CHARIZARDITE_Y,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7570,7 +7570,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_CHARIZARD_Y_2] = { // Mega_Charizard_Y-4attacks (ID: 841)
-        .species = SPECIES_MEGA_CHARIZARD_Y,
+        .species = SPECIES_CHARIZARD_MEGA_Y,
         .moves = {MOVE_FLAMETHROWER, MOVE_BLAST_BURN, MOVE_SOLAR_BEAM, MOVE_FOCUS_BLAST},
         .heldItem = ITEM_CHARIZARDITE_Y,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7579,7 +7579,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_BLASTOISE_1] = { // Mega_Blastoise-Defensive (ID: 842)
-        .species = SPECIES_MEGA_BLASTOISE,
+        .species = SPECIES_BLASTOISE_MEGA,
         .moves = {MOVE_FLASH_CANNON, MOVE_SCALD, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_BLASTOISINITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -7588,7 +7588,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_BLASTOISE_2] = { // Mega_Blastoise-Offensive (ID: 843)
-        .species = SPECIES_MEGA_BLASTOISE,
+        .species = SPECIES_BLASTOISE_MEGA,
         .moves = {MOVE_FLASH_CANNON, MOVE_HYDRO_PUMP, MOVE_AURA_SPHERE, MOVE_HYDRO_CANNON},
         .heldItem = ITEM_BLASTOISINITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -7597,7 +7597,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_BEEDRILL_1] = { // Mega_Beedrill-4attacks (ID: 844)
-        .species = SPECIES_MEGA_BEEDRILL,
+        .species = SPECIES_BEEDRILL_MEGA,
         .moves = {MOVE_U_TURN, MOVE_POISON_JAB, MOVE_DRILL_RUN, MOVE_X_SCISSOR},
         .heldItem = ITEM_BEEDRILLITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7606,7 +7606,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_BEEDRILL_2] = { // Mega_Beedrill-SD (ID: 845)
-        .species = SPECIES_MEGA_BEEDRILL,
+        .species = SPECIES_BEEDRILL_MEGA,
         .moves = {MOVE_X_SCISSOR, MOVE_POISON_JAB, MOVE_DRILL_RUN, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_BEEDRILLITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7615,7 +7615,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_PIDGEOT_1] = { // Mega_Pidgeot-WorkUp (ID: 846)
-        .species = SPECIES_MEGA_PIDGEOT,
+        .species = SPECIES_PIDGEOT_MEGA,
         .moves = {MOVE_HURRICANE, MOVE_HEAT_WAVE, MOVE_ROOST, MOVE_WORK_UP},
         .heldItem = ITEM_PIDGEOTITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7624,7 +7624,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_PIDGEOT_2] = { // Mega_Pidgeot-HyperBeam (ID: 847)
-        .species = SPECIES_MEGA_PIDGEOT,
+        .species = SPECIES_PIDGEOT_MEGA,
         .moves = {MOVE_HURRICANE, MOVE_HEAT_WAVE, MOVE_ROOST, MOVE_HYPER_BEAM},
         .heldItem = ITEM_PIDGEOTITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7633,7 +7633,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_ALAKAZAM_1] = { // Mega_Alakazam-3attacks (ID: 848)
-        .species = SPECIES_MEGA_ALAKAZAM,
+        .species = SPECIES_ALAKAZAM_MEGA,
         .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_SHADOW_BALL, MOVE_RECOVER},
         .heldItem = ITEM_ALAKAZITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7642,7 +7642,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_ALAKAZAM_2] = { // Mega_Alakazam-CM (ID: 849)
-        .species = SPECIES_MEGA_ALAKAZAM,
+        .species = SPECIES_ALAKAZAM_MEGA,
         .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_CALM_MIND, MOVE_RECOVER},
         .heldItem = ITEM_ALAKAZITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7651,7 +7651,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SLOWBRO_1] = { // Mega_Slowbro-CM (ID: 850)
-        .species = SPECIES_MEGA_SLOWBRO,
+        .species = SPECIES_SLOWBRO_MEGA,
         .moves = {MOVE_SCALD, MOVE_PSYSHOCK, MOVE_CALM_MIND, MOVE_RECOVER},
         .heldItem = ITEM_SLOWBRONITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -7660,7 +7660,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SLOWBRO_2] = { // Mega_Slowbro-Offensive (ID: 851)
-        .species = SPECIES_MEGA_SLOWBRO,
+        .species = SPECIES_SLOWBRO_MEGA,
         .moves = {MOVE_SCALD, MOVE_PSYSHOCK, MOVE_ICE_BEAM, MOVE_RECOVER},
         .heldItem = ITEM_SLOWBRONITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -7669,7 +7669,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_GENGAR_1] = { // Mega_Gengar-Offensive (ID: 852)
-        .species = SPECIES_MEGA_GENGAR,
+        .species = SPECIES_GENGAR_MEGA,
         .moves = {MOVE_SLUDGE_WAVE, MOVE_SHADOW_BALL, MOVE_FOCUS_BLAST, MOVE_DESTINY_BOND},
         .heldItem = ITEM_GENGARITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7678,7 +7678,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_GENGAR_2] = { // Mega_Gengar-PerishTrap (ID: 853)
-        .species = SPECIES_MEGA_GENGAR,
+        .species = SPECIES_GENGAR_MEGA,
         .moves = {MOVE_SHADOW_BALL, MOVE_PERISH_SONG, MOVE_EE_PROTECT, MOVE_SUBSTITUTE},
         .heldItem = ITEM_GENGARITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -7687,7 +7687,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_KANGASKHAN_1] = { // Mega_Kangaskhan-IcePunch (ID: 854)
-        .species = SPECIES_MEGA_KANGASKHAN,
+        .species = SPECIES_KANGASKHAN_MEGA,
         .moves = {MOVE_BODY_SLAM, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_ICE_PUNCH},
         .heldItem = ITEM_KANGASKHANITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7696,7 +7696,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_KANGASKHAN_2] = { // Mega_Kangaskhan-SuckerPunch (ID: 855)
-        .species = SPECIES_MEGA_KANGASKHAN,
+        .species = SPECIES_KANGASKHAN_MEGA,
         .moves = {MOVE_BODY_SLAM, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_SUCKER_PUNCH},
         .heldItem = ITEM_KANGASKHANITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7705,7 +7705,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_PINSIR_1] = { // Mega_Pinsir-CloseCombat (ID: 856)
-        .species = SPECIES_MEGA_PINSIR,
+        .species = SPECIES_PINSIR_MEGA,
         .moves = {MOVE_RETURN, MOVE_QUICK_ATTACK, MOVE_CLOSE_COMBAT, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_PINSIRITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7714,7 +7714,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_PINSIR_2] = { // Mega_Pinsir-Earthquake (ID: 857)
-        .species = SPECIES_MEGA_PINSIR,
+        .species = SPECIES_PINSIR_MEGA,
         .moves = {MOVE_RETURN, MOVE_QUICK_ATTACK, MOVE_EARTHQUAKE, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_PINSIRITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7723,7 +7723,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_GYARADOS_1] = { // Mega_Gyarados-RestTalk (ID: 858)
-        .species = SPECIES_MEGA_GYARADOS,
+        .species = SPECIES_GYARADOS_MEGA,
         .moves = {MOVE_DIVE, MOVE_DRAGON_DANCE, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_GYARADOSITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -7732,7 +7732,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_GYARADOS_2] = { // Mega_Gyarados-Offensive (ID: 859)
-        .species = SPECIES_MEGA_GYARADOS,
+        .species = SPECIES_GYARADOS_MEGA,
         .moves = {MOVE_WATERFALL, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE},
         .heldItem = ITEM_GYARADOSITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7741,7 +7741,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_AERODACTYL_1] = { // Mega_Aerodactyl-StallBreaker (ID: 860)
-        .species = SPECIES_MEGA_AERODACTYL,
+        .species = SPECIES_AERODACTYL_MEGA,
         .moves = {MOVE_FLY, MOVE_EARTHQUAKE, MOVE_TAUNT, MOVE_ROOST},
         .heldItem = ITEM_AERODACTYLITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7750,7 +7750,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_AERODACTYL_2] = { // Mega_Aerodactyl-4attacks (ID: 860)
-        .species = SPECIES_MEGA_AERODACTYL,
+        .species = SPECIES_AERODACTYL_MEGA,
         .moves = {MOVE_FLY, MOVE_EARTHQUAKE, MOVE_ICE_FANG, MOVE_THUNDER_FANG},
         .heldItem = ITEM_AERODACTYLITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7759,7 +7759,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_MEWTWO_X_1] = { // Mega_Mewtwo_X-4attacks (ID: 862)
-        .species = SPECIES_MEGA_MEWTWO_X,
+        .species = SPECIES_MEWTWO_MEGA_X,
         .moves = {MOVE_LOW_KICK, MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH},
         .heldItem = ITEM_MEWTWONITE_X,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7768,7 +7768,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_MEWTWO_X_2] = { // Mega_Mewtwo_X-BU (ID: 863)
-        .species = SPECIES_MEGA_MEWTWO_X,
+        .species = SPECIES_MEWTWO_MEGA_X,
         .moves = {MOVE_DRAIN_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_BULK_UP, MOVE_RECOVER},
         .heldItem = ITEM_MEWTWONITE_X,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -7777,7 +7777,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_MEWTWO_Y_1] = { // Mega_Mewtwo_Y-4attacks (ID: 864)
-        .species = SPECIES_MEGA_MEWTWO_Y,
+        .species = SPECIES_MEWTWO_MEGA_Y,
         .moves = {MOVE_PSYSTRIKE, MOVE_FOCUS_BLAST, MOVE_ICE_BEAM, MOVE_FIRE_BLAST},
         .heldItem = ITEM_MEWTWONITE_Y,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7786,7 +7786,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_MEWTWO_Y_2] = { // Mega_Mewtwo_Y-CM (ID: 865)
-        .species = SPECIES_MEGA_MEWTWO_Y,
+        .species = SPECIES_MEWTWO_MEGA_Y,
         .moves = {MOVE_PSYSTRIKE, MOVE_FOCUS_BLAST, MOVE_CALM_MIND, MOVE_RECOVER},
         .heldItem = ITEM_MEWTWONITE_Y,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7795,7 +7795,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_AMPHAROS_1] = { // Mega_Ampharos-TailGlow (ID: 866)
-        .species = SPECIES_MEGA_AMPHAROS,
+        .species = SPECIES_AMPHAROS_MEGA,
         .moves = {MOVE_PARABOLIC_CHARGE, MOVE_DRAGON_PULSE, MOVE_FOCUS_BLAST, MOVE_TAIL_GLOW},
         .heldItem = ITEM_AMPHAROSITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -7804,7 +7804,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_AMPHAROS_2] = { // Mega_Ampharos-DualSetup (ID: 867)
-        .species = SPECIES_MEGA_AMPHAROS,
+        .species = SPECIES_AMPHAROS_MEGA,
         .moves = {MOVE_PARABOLIC_CHARGE, MOVE_DRAGON_PULSE, MOVE_TAIL_GLOW, MOVE_AGILITY},
         .heldItem = ITEM_AMPHAROSITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7813,7 +7813,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_STEELIX_1] = { // Mega_Steelix-Curse3attacks (ID: 868)
-        .species = SPECIES_MEGA_STEELIX,
+        .species = SPECIES_STEELIX_MEGA,
         .moves = {MOVE_GYRO_BALL, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_CURSE},
         .heldItem = ITEM_STEELIXITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -7822,7 +7822,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_STEELIX_2] = { // Mega_Steelix-CurseRestTalk (ID: 869)
-        .species = SPECIES_MEGA_STEELIX,
+        .species = SPECIES_STEELIX_MEGA,
         .moves = {MOVE_GYRO_BALL, MOVE_CURSE, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_STEELIXITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -7831,7 +7831,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_SCIZOR_1] = { // Mega_Scizor-Curse (ID: 870)
-        .species = SPECIES_MEGA_SCIZOR,
+        .species = SPECIES_SCIZOR_MEGA,
         .moves = {MOVE_BULLET_PUNCH, MOVE_QUICK_ATTACK, MOVE_CURSE, MOVE_ROOST},
         .heldItem = ITEM_SCIZORITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -7840,7 +7840,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SCIZOR_2] = { // Mega_Scizor-SD (ID: 871)
-        .species = SPECIES_MEGA_SCIZOR,
+        .species = SPECIES_SCIZOR_MEGA,
         .moves = {MOVE_BULLET_PUNCH, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE, MOVE_ROOST},
         .heldItem = ITEM_SCIZORITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -7849,7 +7849,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_HERACROSS_1] = { // Mega_Heracross-4attacks (ID: 872)
-        .species = SPECIES_MEGA_HERACROSS,
+        .species = SPECIES_HERACROSS_MEGA,
         .moves = {MOVE_PIN_MISSILE, MOVE_CLOSE_COMBAT, MOVE_ROCK_BLAST, MOVE_BULLET_SEED},
         .heldItem = ITEM_HERACRONITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7858,7 +7858,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_HERACROSS_2] = { // Mega_Heracross-SD (ID: 873)
-        .species = SPECIES_MEGA_HERACROSS,
+        .species = SPECIES_HERACROSS_MEGA,
         .moves = {MOVE_PIN_MISSILE, MOVE_CLOSE_COMBAT, MOVE_ROCK_BLAST, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_HERACRONITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -7867,7 +7867,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_HOUNDOOM_1] = { // Mega_Houndoom-SludgeBombNP (ID: 874)
-        .species = SPECIES_MEGA_HOUNDOOM,
+        .species = SPECIES_HOUNDOOM_MEGA,
         .moves = {MOVE_FIRE_BLAST, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB, MOVE_NASTY_PLOT},
         .heldItem = ITEM_HOUNDOOMINITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7876,7 +7876,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_HOUNDOOM_2] = { // Mega_Houndoom-OverheatNP (ID: 875)
-        .species = SPECIES_MEGA_HOUNDOOM,
+        .species = SPECIES_HOUNDOOM_MEGA,
         .moves = {MOVE_FLAMETHROWER, MOVE_DARK_PULSE, MOVE_OVERHEAT, MOVE_NASTY_PLOT},
         .heldItem = ITEM_HOUNDOOMINITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7885,7 +7885,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_TYRANITAR_1] = { // Mega_Tyranitar-DD (ID: 876)
-        .species = SPECIES_MEGA_TYRANITAR,
+        .species = SPECIES_TYRANITAR_MEGA,
         .moves = {MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_DRAGON_DANCE},
         .heldItem = ITEM_TYRANITARITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7894,7 +7894,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_TYRANITAR_2] = { // Mega_Tyranitar-4attacks (ID: 877)
-        .species = SPECIES_MEGA_TYRANITAR,
+        .species = SPECIES_TYRANITAR_MEGA,
         .moves = {MOVE_STONE_EDGE, MOVE_CRUNCH, MOVE_ICE_PUNCH, MOVE_SUPERPOWER},
         .heldItem = ITEM_TYRANITARITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -7903,7 +7903,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_SCEPTILE_1] = { // Mega_Sceptile-EarthquakeSD (ID: 878)
-        .species = SPECIES_MEGA_SCEPTILE,
+        .species = SPECIES_SCEPTILE_MEGA,
         .moves = {MOVE_DUAL_CHOP, MOVE_BULLET_SEED, MOVE_EARTHQUAKE, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_SCEPTILITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7912,7 +7912,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_SCEPTILE_2] = { // Mega_Sceptile-DoubleKickSD (ID: 879)
-        .species = SPECIES_MEGA_SCEPTILE,
+        .species = SPECIES_SCEPTILE_MEGA,
         .moves = {MOVE_DUAL_CHOP, MOVE_BULLET_SEED, MOVE_DOUBLE_KICK, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_SCEPTILITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7921,8 +7921,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_BLAZIKEN_1] = { // Mega_Blaziken-SD (ID: 880)
-        .species = SPECIES_MEGA_BLAZIKEN,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_FLARE_BLITZ, MOVE_EE_PROTECT, MOVE_SWORDS_DANCE},
+        .species = SPECIES_BLAZIKEN_MEGA,
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_FLARE_BLITZ, MOVE_EE_PROTECT, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_BLAZIKENITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT,
@@ -7930,8 +7930,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_BLAZIKEN_2] = { // Mega_Blaziken-Mixed (ID: 881)
-        .species = SPECIES_MEGA_BLAZIKEN,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_OVERHEAT, MOVE_ROCK_SLIDE, MOVE_EE_PROTECT},
+        .species = SPECIES_BLAZIKEN_MEGA,
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_OVERHEAT, MOVE_ROCK_SLIDE, MOVE_EE_PROTECT},
         .heldItem = ITEM_BLAZIKENITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_NAIVE,
@@ -7939,7 +7939,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SWAMPERT_1] = { // Mega_Swampert-Rain (ID: 882)
-        .species = SPECIES_MEGA_SWAMPERT,
+        .species = SPECIES_SWAMPERT_MEGA,
         .moves = {MOVE_WATERFALL, MOVE_EARTHQUAKE, MOVE_ICE_PUNCH, MOVE_RAIN_DANCE},
         .heldItem = ITEM_SWAMPERTITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -7948,7 +7948,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_SWAMPERT_2] = { // Mega_Swampert-RestTalk (ID: 883)
-        .species = SPECIES_MEGA_SWAMPERT,
+        .species = SPECIES_SWAMPERT_MEGA,
         .moves = {MOVE_DIVE, MOVE_EARTHQUAKE, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_SWAMPERTITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -7957,7 +7957,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_GARDEVOIR_1] = { // Mega_Gardevoir-CM (ID: 884)
-        .species = SPECIES_MEGA_GARDEVOIR,
+        .species = SPECIES_GARDEVOIR_MEGA,
         .moves = {MOVE_HYPER_VOICE, MOVE_PSYSHOCK, MOVE_FOCUS_BLAST, MOVE_CALM_MIND},
         .heldItem = ITEM_GARDEVOIRITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7966,7 +7966,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_GARDEVOIR_2] = { // Mega_Gardevoir-4attacks (ID: 885)
-        .species = SPECIES_MEGA_GARDEVOIR,
+        .species = SPECIES_GARDEVOIR_MEGA,
         .moves = {MOVE_HYPER_VOICE, MOVE_PSYSHOCK, MOVE_FOCUS_BLAST, MOVE_HYPER_BEAM},
         .heldItem = ITEM_GARDEVOIRITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -7975,7 +7975,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_SABLEYE_1] = { // Mega_Sableye-Defensive (ID: 886)
-        .species = SPECIES_MEGA_SABLEYE,
+        .species = SPECIES_SABLEYE_MEGA,
         .moves = {MOVE_KNOCK_OFF, MOVE_REAPING_BLOW, MOVE_WILL_O_WISP, MOVE_RECOVER},
         .heldItem = ITEM_SABLENITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -7984,7 +7984,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SABLEYE_2] = { // Mega_Sableye-CM (ID: 887)
-        .species = SPECIES_MEGA_SABLEYE,
+        .species = SPECIES_SABLEYE_MEGA,
         .moves = {MOVE_SHADOW_BALL, MOVE_CALM_MIND, MOVE_WILL_O_WISP, MOVE_RECOVER},
         .heldItem = ITEM_SABLENITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -7993,7 +7993,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_MAWILE_1] = { // Mega_Mawile-4attacks (ID: 888)
-        .species = SPECIES_MEGA_MAWILE,
+        .species = SPECIES_MAWILE_MEGA,
         .moves = {MOVE_PLAY_ROUGH, MOVE_FIRE_FANG, MOVE_STONE_EDGE, MOVE_IRON_HEAD},
         .heldItem = ITEM_MAWILITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -8002,7 +8002,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_MAWILE_2] = { // Mega_Mawile-SubPunch (ID: 889)
-        .species = SPECIES_MEGA_MAWILE,
+        .species = SPECIES_MAWILE_MEGA,
         .moves = {MOVE_PLAY_ROUGH, MOVE_SECRET_POWER, MOVE_SUBSTITUTE, MOVE_FOCUS_PUNCH},
         .heldItem = ITEM_MAWILITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -8011,7 +8011,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_AGGRON_1] = { // Mega_Aggron-RestTalk (ID: 890)
-        .species = SPECIES_MEGA_AGGRON,
+        .species = SPECIES_AGGRON_MEGA,
         .moves = {MOVE_HEAVY_SLAM, MOVE_EARTHQUAKE, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_AGGRONITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -8020,7 +8020,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_AGGRON_2] = { // Mega_Aggron-Offensive (ID: 891)
-        .species = SPECIES_MEGA_AGGRON,
+        .species = SPECIES_AGGRON_MEGA,
         .moves = {MOVE_HEAVY_SLAM, MOVE_BULLET_PUNCH, MOVE_OUTRAGE, MOVE_EARTHQUAKE},
         .heldItem = ITEM_AGGRONITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -8029,8 +8029,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_MEDICHAM_1] = { // Mega_Medicham-DualSTAB (ID: 892)
-        .species = SPECIES_MEGA_MEDICHAM,
-        .moves = {MOVE_FAKE_OUT, MOVE_HI_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_ICE_PUNCH},
+        .species = SPECIES_MEDICHAM_MEGA,
+        .moves = {MOVE_FAKE_OUT, MOVE_HIGH_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_ICE_PUNCH},
         .heldItem = ITEM_MEDICHAMITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -8038,8 +8038,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_MEDICHAM_2] = { // Mega_Medicham-DualPriority (ID: 893)
-        .species = SPECIES_MEGA_MEDICHAM,
-        .moves = {MOVE_FAKE_OUT, MOVE_HI_JUMP_KICK, MOVE_BULLET_PUNCH, MOVE_ICE_PUNCH},
+        .species = SPECIES_MEDICHAM_MEGA,
+        .moves = {MOVE_FAKE_OUT, MOVE_HIGH_JUMP_KICK, MOVE_BULLET_PUNCH, MOVE_ICE_PUNCH},
         .heldItem = ITEM_MEDICHAMITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT,
@@ -8047,7 +8047,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_MANECTRIC_1] = { // Mega_Manectric-Overheat (ID: 894)
-        .species = SPECIES_MEGA_MANECTRIC,
+        .species = SPECIES_MANECTRIC_MEGA,
         .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_OVERHEAT, MOVE_HIDDEN_POWER},
         .heldItem = ITEM_MANECTITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8056,7 +8056,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_MANECTRIC_2] = { // Mega_Manectric-Flamethrower (ID: 895)
-        .species = SPECIES_MEGA_MANECTRIC,
+        .species = SPECIES_MANECTRIC_MEGA,
         .moves = {MOVE_THUNDERBOLT, MOVE_VOLT_SWITCH, MOVE_FLAMETHROWER, MOVE_HIDDEN_POWER},
         .heldItem = ITEM_MANECTITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8065,7 +8065,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_SHARPEDO_1] = { // Mega_Sharpedo-DestinyBond (ID: 896)
-        .species = SPECIES_MEGA_SHARPEDO,
+        .species = SPECIES_SHARPEDO_MEGA,
         .moves = {MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_DESTINY_BOND, MOVE_EE_PROTECT},
         .heldItem = ITEM_SHARPEDONITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8074,7 +8074,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SHARPEDO_2] = { // Mega_Sharpedo-3attacks (ID: 897)
-        .species = SPECIES_MEGA_SHARPEDO,
+        .species = SPECIES_SHARPEDO_MEGA,
         .moves = {MOVE_CRUNCH, MOVE_PSYCHIC_FANGS, MOVE_POISON_FANG, MOVE_EE_PROTECT},
         .heldItem = ITEM_SHARPEDONITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8083,7 +8083,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_CAMERUPT_1] = { // Mega_Camerupt-4attacks (ID: 898)
-        .species = SPECIES_MEGA_CAMERUPT,
+        .species = SPECIES_CAMERUPT_MEGA,
         .moves = {MOVE_FIRE_BLAST, MOVE_EARTH_POWER, MOVE_GRAVEL_STORM, MOVE_HIDDEN_POWER},
         .heldItem = ITEM_CAMERUPTITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -8092,7 +8092,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_CAMERUPT_2] = { // Mega_Camerupt-RestTalk (ID: 899)
-        .species = SPECIES_MEGA_CAMERUPT,
+        .species = SPECIES_CAMERUPT_MEGA,
         .moves = {MOVE_FIRE_BLAST, MOVE_EARTH_POWER, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_CAMERUPTITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -8101,7 +8101,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_ALTARIA_1] = { // Mega_Altaria-OffensiveDD (ID: 900)
-        .species = SPECIES_MEGA_ALTARIA,
+        .species = SPECIES_ALTARIA_MEGA,
         .moves = {MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE, MOVE_ROOST},
         .heldItem = ITEM_ALTARIANITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8110,7 +8110,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_ALTARIA_2] = { // Mega_Altaria-BulkyDD (ID: 901)
-        .species = SPECIES_MEGA_ALTARIA,
+        .species = SPECIES_ALTARIA_MEGA,
         .moves = {MOVE_RETURN, MOVE_DRAGON_DANCE, MOVE_COTTON_GUARD, MOVE_ROOST},
         .heldItem = ITEM_ALTARIANITE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -8119,7 +8119,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_BANETTE_1] = { // Mega_Banette-TR (ID: 902)
-        .species = SPECIES_MEGA_BANETTE,
+        .species = SPECIES_BANETTE_MEGA,
         .moves = {MOVE_REAPING_BLOW, MOVE_PLAY_ROUGH, MOVE_SHADOW_SNEAK, MOVE_TRICK_ROOM},
         .heldItem = ITEM_BANETTITE,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -8128,7 +8128,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_BANETTE_2] = { // Mega_Banette-RestTalk (ID: 903)
-        .species = SPECIES_MEGA_BANETTE,
+        .species = SPECIES_BANETTE_MEGA,
         .moves = {MOVE_REAPING_BLOW, MOVE_PLAY_ROUGH, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_BANETTITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -8137,7 +8137,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_ABSOL_1] = { // Mega_Absol-4attacks (ID: 904)
-        .species = SPECIES_MEGA_ABSOL,
+        .species = SPECIES_ABSOL_MEGA,
         .moves = {MOVE_KNOCK_OFF, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_SUPERPOWER},
         .heldItem = ITEM_ABSOLITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8146,7 +8146,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_ABSOL_2] = { // Mega_Absol-SD (ID: 905)
-        .species = SPECIES_MEGA_ABSOL,
+        .species = SPECIES_ABSOL_MEGA,
         .moves = {MOVE_KNOCK_OFF, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_ABSOLITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8155,7 +8155,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_GLALIE_1] = { // Mega_Glalie-IceShard (ID: 906)
-        .species = SPECIES_MEGA_GLALIE,
+        .species = SPECIES_GLALIE_MEGA,
         .moves = {MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_THUNDER_FANG, MOVE_ICE_SHARD},
         .heldItem = ITEM_GLALITITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8164,7 +8164,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_GLALIE_2] = { // Mega_Glalie-Earthquake (ID: 907)
-        .species = SPECIES_MEGA_GLALIE,
+        .species = SPECIES_GLALIE_MEGA,
         .moves = {MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_THUNDER_FANG, MOVE_EARTHQUAKE},
         .heldItem = ITEM_GLALITITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8173,7 +8173,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_SALAMENCE_1] = { // Mega_Salamence-Special (ID: 908)
-        .species = SPECIES_MEGA_SALAMENCE,
+        .species = SPECIES_SALAMENCE_MEGA,
         .moves = {MOVE_AEROBLAST, MOVE_DRACO_METEOR, MOVE_BLAST_OFF, MOVE_ROOST},
         .heldItem = ITEM_SALAMENCITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8182,7 +8182,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_SALAMENCE_2] = { // Mega_Salamence-DD (ID: 909)
-        .species = SPECIES_MEGA_SALAMENCE,
+        .species = SPECIES_SALAMENCE_MEGA,
         .moves = {MOVE_FLY, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE, MOVE_ROOST},
         .heldItem = ITEM_SALAMENCITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -8191,7 +8191,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_METAGROSS_1] = { // Mega_Metagross-4attacks (ID: 910)
-        .species = SPECIES_MEGA_METAGROSS,
+        .species = SPECIES_METAGROSS_MEGA,
         .moves = {MOVE_HEAVY_SLAM, MOVE_BULLET_PUNCH, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH},
         .heldItem = ITEM_METAGROSSITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8200,7 +8200,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_METAGROSS_2] = { // Mega_Metagross-Agility (ID: 911)
-        .species = SPECIES_MEGA_METAGROSS,
+        .species = SPECIES_METAGROSS_MEGA,
         .moves = {MOVE_HEAVY_SLAM, MOVE_EARTHQUAKE, MOVE_POWER_UP_PUNCH, MOVE_AGILITY},
         .heldItem = ITEM_METAGROSSITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8209,7 +8209,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_LATIAS_1] = { // Mega_Latias-BulkyCM (ID: 912)
-        .species = SPECIES_MEGA_LATIAS,
+        .species = SPECIES_LATIAS_MEGA,
         .moves = {MOVE_MIST_BALL, MOVE_SURF, MOVE_CALM_MIND, MOVE_ROOST},
         .heldItem = ITEM_LATIASITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -8218,7 +8218,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_LATIAS_2] = { // Mega_Latias-OffensiveCM (ID: 913)
-        .species = SPECIES_MEGA_LATIAS,
+        .species = SPECIES_LATIAS_MEGA,
         .moves = {MOVE_MIST_BALL, MOVE_SHADOW_BALL, MOVE_DRACO_METEOR, MOVE_CALM_MIND},
         .heldItem = ITEM_LATIASITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8227,7 +8227,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_LATIOS_1] = { // Mega_Latios-3attacksRoost (ID: 914)
-        .species = SPECIES_MEGA_LATIOS,
+        .species = SPECIES_LATIOS_MEGA,
         .moves = {MOVE_LUSTER_PURGE, MOVE_DRACO_METEOR, MOVE_EARTHQUAKE, MOVE_ROOST},
         .heldItem = ITEM_LATIOSITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8236,7 +8236,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_LATIOS_2] = { // Mega_Latios-CM (ID: 915)
-        .species = SPECIES_MEGA_LATIOS,
+        .species = SPECIES_LATIOS_MEGA,
         .moves = {MOVE_LUSTER_PURGE, MOVE_SHADOW_BALL, MOVE_DRACO_METEOR, MOVE_CALM_MIND},
         .heldItem = ITEM_LATIASITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8245,7 +8245,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_PRIMAL_GROUDON_1] = { // Primal_Groudon-DualSetup (ID: 916)
-        .species = SPECIES_PRIMAL_GROUDON,
+        .species = SPECIES_GROUDON_PRIMAL,
         .moves = {MOVE_PRECIPICE_BLADES, MOVE_FIRE_PUNCH, MOVE_SWORDS_DANCE, MOVE_ROCK_POLISH},
         .heldItem = ITEM_RED_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8254,7 +8254,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_PRIMAL_GROUDON_2] = { // Primal_Groudon-RestTalk (ID: 917)
-        .species = SPECIES_PRIMAL_GROUDON,
+        .species = SPECIES_GROUDON_PRIMAL,
         .moves = {MOVE_PRECIPICE_BLADES, MOVE_FIRE_PUNCH, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_RED_ORB,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -8263,7 +8263,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_PRIMAL_KYOGRE_1] = { // Primal_Kyogre-CM (ID: 918)
-        .species = SPECIES_PRIMAL_KYOGRE,
+        .species = SPECIES_KYOGRE_PRIMAL,
         .moves = {MOVE_ORIGIN_PULSE, MOVE_HURRICANE, MOVE_THUNDER, MOVE_CALM_MIND},
         .heldItem = ITEM_BLUE_ORB,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8272,7 +8272,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_PRIMAL_KYOGRE_2] = { // Primal_Kyogre-RestTalk (ID: 919)
-        .species = SPECIES_PRIMAL_KYOGRE,
+        .species = SPECIES_KYOGRE_PRIMAL,
         .moves = {MOVE_SCALD, MOVE_HURRICANE, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_BLUE_ORB,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -8281,7 +8281,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_RAYQUAZA_1] = { // Mega_Rayquaza-DD (ID: 920)
-        .species = SPECIES_MEGA_RAYQUAZA,
+        .species = SPECIES_RAYQUAZA_MEGA,
         .moves = {MOVE_DRAGON_ASCENT, MOVE_EARTHQUAKE, MOVE_EXTREME_SPEED, MOVE_DRAGON_DANCE},
         .heldItem = ITEM_LIFE_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8290,7 +8290,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_RAYQUAZA_2] = { // Mega_Rayquaza-Band (ID: 921)
-        .species = SPECIES_MEGA_RAYQUAZA,
+        .species = SPECIES_RAYQUAZA_MEGA,
         .moves = {MOVE_DRAGON_ASCENT, MOVE_V_CREATE, MOVE_EXTREME_SPEED, MOVE_EARTHQUAKE},
         .heldItem = ITEM_CHOICE_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8299,8 +8299,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_LOPUNNY_1] = { // Mega_Lopunny-4attacks (ID: 922)
-        .species = SPECIES_MEGA_LOPUNNY,
-        .moves = {MOVE_FAKE_OUT, MOVE_HI_JUMP_KICK, MOVE_PLAY_ROUGH, MOVE_SECRET_POWER},
+        .species = SPECIES_LOPUNNY_MEGA,
+        .moves = {MOVE_FAKE_OUT, MOVE_HIGH_JUMP_KICK, MOVE_PLAY_ROUGH, MOVE_SECRET_POWER},
         .heldItem = ITEM_LOPUNNITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -8308,8 +8308,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_LOPUNNY_2] = { // Mega_Lopunny-HealingWish (ID: 923)
-        .species = SPECIES_MEGA_LOPUNNY,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_PLAY_ROUGH, MOVE_SECRET_POWER, MOVE_HEALING_WISH},
+        .species = SPECIES_LOPUNNY_MEGA,
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_PLAY_ROUGH, MOVE_SECRET_POWER, MOVE_HEALING_WISH},
         .heldItem = ITEM_LOPUNNITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY,
@@ -8317,7 +8317,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_GARCHOMP_1] = { // Mega_Garchomp-SD (ID: 924)
-        .species = SPECIES_MEGA_GARCHOMP,
+        .species = SPECIES_GARCHOMP_MEGA,
         .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_SWORDS_DANCE, MOVE_SUBSTITUTE},
         .heldItem = ITEM_GARCHOMPITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8326,7 +8326,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_GARCHOMP_2] = { // Mega_Garchomp-Mixed (ID: 925)
-        .species = SPECIES_MEGA_GARCHOMP,
+        .species = SPECIES_GARCHOMP_MEGA,
         .moves = {MOVE_DRACO_METEOR, MOVE_EARTHQUAKE, MOVE_FIRE_BLAST, MOVE_STONE_EDGE},
         .heldItem = ITEM_GARCHOMPITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8335,7 +8335,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_LUCARIO_1] = { // Mega_Lucario-SD (ID: 926)
-        .species = SPECIES_MEGA_LUCARIO,
+        .species = SPECIES_LUCARIO_MEGA,
         .moves = {MOVE_CLOSE_COMBAT, MOVE_METEOR_MASH, MOVE_BULLET_PUNCH, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_LUCARIONITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8344,7 +8344,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_LUCARIO_2] = { // Mega_Lucario-4attacks (ID: 927)
-        .species = SPECIES_MEGA_LUCARIO,
+        .species = SPECIES_LUCARIO_MEGA,
         .moves = {MOVE_CLOSE_COMBAT, MOVE_METEOR_MASH, MOVE_BULLET_PUNCH, MOVE_ICE_PUNCH},
         .heldItem = ITEM_LUCARIONITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8353,7 +8353,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_ABOMASNOW_1] = { // Mega_Abomasnow-Mixed (ID: 928)
-        .species = SPECIES_MEGA_ABOMASNOW,
+        .species = SPECIES_ABOMASNOW_MEGA,
         .moves = {MOVE_BLIZZARD, MOVE_ICE_SHARD, MOVE_GIGA_DRAIN, MOVE_EARTHQUAKE},
         .heldItem = ITEM_ABOMASITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -8362,7 +8362,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_ABOMASNOW_2] = { // Mega_Abomasnow-SD (ID: 929)
-        .species = SPECIES_MEGA_ABOMASNOW,
+        .species = SPECIES_ABOMASNOW_MEGA,
         .moves = {MOVE_WOOD_HAMMER, MOVE_ICE_SHARD, MOVE_EARTHQUAKE, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_ABOMASITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8371,7 +8371,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 2
     },
     [FRONTIER_MON_MEGA_GALLADE_1] = { // Mega_Gallade-SD (ID: 930)
-        .species = SPECIES_MEGA_GALLADE,
+        .species = SPECIES_GALLADE_MEGA,
         .moves = {MOVE_CLOSE_COMBAT, MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE},
         .heldItem = ITEM_GALLADITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -8380,7 +8380,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_GALLADE_2] = { // Mega_Gallade-BU (ID: 931)
-        .species = SPECIES_MEGA_GALLADE,
+        .species = SPECIES_GALLADE_MEGA,
         .moves = {MOVE_DRAIN_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF, MOVE_BULK_UP},
         .heldItem = ITEM_GALLADITE,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -8389,7 +8389,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_AUDINO_1] = { // Mega_Audino-BulkyCM (ID: 932)
-        .species = SPECIES_MEGA_AUDINO,
+        .species = SPECIES_AUDINO_MEGA,
         .moves = {MOVE_DAZZLING_GLEAM, MOVE_CALM_MIND, MOVE_REST, MOVE_SLEEP_TALK},
         .heldItem = ITEM_AUDINITE,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -8398,7 +8398,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_AUDINO_2] = { // Mega_Audino-OffensiveCM (ID: 933)
-        .species = SPECIES_MEGA_AUDINO,
+        .species = SPECIES_AUDINO_MEGA,
         .moves = {MOVE_DAZZLING_GLEAM, MOVE_FIRE_BLAST, MOVE_SURF, MOVE_CALM_MIND},
         .heldItem = ITEM_AUDINITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -8407,7 +8407,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_MEGA_DIANCIE_1] = { // Mega_Diancie-3attacksCM (ID: 934)
-        .species = SPECIES_MEGA_DIANCIE,
+        .species = SPECIES_DIANCIE_MEGA,
         .moves = {MOVE_DAZZLING_GLEAM, MOVE_POWER_GEM, MOVE_EARTH_POWER, MOVE_CALM_MIND},
         .heldItem = ITEM_DIANCITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8416,7 +8416,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 0
     },
     [FRONTIER_MON_MEGA_DIANCIE_2] = { // Mega_Diancie-MagnetRiseCM (ID: 935)
-        .species = SPECIES_MEGA_DIANCIE,
+        .species = SPECIES_DIANCIE_MEGA,
         .moves = {MOVE_DAZZLING_GLEAM, MOVE_EARTH_POWER, MOVE_CALM_MIND, MOVE_MAGNET_RISE},
         .heldItem = ITEM_DIANCITE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -8731,7 +8731,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .ability = 1
     },
     [FRONTIER_MON_DARMANITAN_ZEN_TRICK_ROOM] = { // (ID: 976)
-        .species = SPECIES_DARMANITAN_ZEN,
+        .species = SPECIES_DARMANITAN_ZEN_MODE,
         .moves = {MOVE_PSYCHIC, MOVE_GRAVEL_STORM, MOVE_FOCUS_BLAST, MOVE_TRICK_ROOM},
         .heldItem = ITEM_WEAKNESS_POLICY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -8930,7 +8930,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_PHEROMOSA_2] = { // Pheromosa-Physical (id 1004)
         .species = SPECIES_PHEROMOSA,
-        .moves = {MOVE_HI_JUMP_KICK, MOVE_U_TURN, MOVE_ICE_BEAM, MOVE_DRILL_RUN},
+        .moves = {MOVE_HIGH_JUMP_KICK, MOVE_U_TURN, MOVE_ICE_BEAM, MOVE_DRILL_RUN},
         .heldItem = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_NAUGHTY,

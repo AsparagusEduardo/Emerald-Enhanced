@@ -81,15 +81,6 @@ void HandleLoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *des
 
 void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality, bool8 isFrontPic)
 {
-    //if (species == SPECIES_UNOWN)
-    //{
-    //    u32 id = GetUnownSpeciesId(personality);
-    //
-    //    if (!isFrontPic)
-    //        LZ77UnCompWram(gMonBackPicTable[id].data, dest);
-    //    else
-    //        LZ77UnCompWram(gMonFrontPicTable[id].data, dest);
-    //}
     if (species > NUM_SPECIES) // is species unknown? draw the ? icon
         LZ77UnCompWram(gMonFrontPicTable[0].data, dest);
     else if (SpeciesHasGenderDifference[species] && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)

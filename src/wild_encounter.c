@@ -722,6 +722,7 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
             {
                 if (TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
                 {
+                    gIsSurfingEncounter = TRUE;
                     if (TryDoDoubleWildBattle())
                     {
                         struct Pokemon mon1 = gEnemyParty[0];
@@ -966,7 +967,7 @@ bool32 AreMonsRepelled(void)
 
 static bool8 IsAbilityAllowingEncounter(u8 level)
 {
-    u8 ability;
+    u16 ability;
 
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return TRUE;

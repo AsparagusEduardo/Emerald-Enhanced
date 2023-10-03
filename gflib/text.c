@@ -178,7 +178,8 @@ static bool32 HasScrollChars(const u8 *text)
 
 bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16))
 {
-    int i, j;
+    int i;
+    u16 j;
 
     if (!gFonts)
         return FALSE;
@@ -1283,7 +1284,6 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
     bool8 isJapanese;
     int minGlyphWidth;
     u32 (*func)(u16 glyphId, bool32 isJapanese);
-    s32 result;
     int localLetterSpacing;
     u32 lineWidth;
     const u8 *bufferPointer;

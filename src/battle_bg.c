@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle.h"
+#include "battle_anim.h"
 #include "battle_bg.h"
 #include "battle_main.h"
 #include "battle_message.h"
@@ -25,6 +26,7 @@
 #include "constants/trainers.h"
 #include "event_data.h"
 #include "constants/vars.h"
+#include "constants/battle_anim.h"
 
 struct BattleBackground
 {
@@ -822,8 +824,7 @@ void LoadBattleMenuWindowGfx(void)
 }
 void DrawMainBattleBackground(void)
 {
-
-    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000))
+    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED_LINK))
     {
         LZDecompressVram(gBattleTerrainTiles_Building, (void*)(BG_CHAR_ADDR(2)));
         LZDecompressVram(gBattleTerrainTilemap_Building, (void*)(BG_SCREEN_ADDR(26)));
@@ -979,7 +980,11 @@ void LoadBattleTextboxAndBackground(void)
 
     }
     LoadBattleMenuWindowGfx();
-    DrawMainBattleBackground();
+    #if B_TERRAIN_BG_CHANGE == TRUE
+        DrawTerrainTypeBattleBackground();
+    #else
+        DrawMainBattleBackground();
+    #endif
 }
 
 
@@ -1257,7 +1262,7 @@ void DrawBattleEntryBackground(void)
         gBattle_BG2_Y = 0xFF5C;
         LoadCompressedSpriteSheetUsingHeap(&sVsLettersSpriteSheet);
     }
-    else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000))
+    else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) || gPartnerTrainerId == TRAINER_STEVEN_PARTNER || gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER)
         {
@@ -1352,7 +1357,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         }
         break;
     case 3:
-        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000))
+        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
         {
             LZDecompressVram(gBattleTerrainTiles_Building, (void*)(BG_CHAR_ADDR(2)));
         }
@@ -1411,7 +1416,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         }
         break;
     case 4:
-        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000))
+        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
         {
             LZDecompressVram(gBattleTerrainTilemap_Building, (void*)(BG_SCREEN_ADDR(26)));
         }
@@ -1473,7 +1478,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         }
         break;
     case 5:
-        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000))
+        if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
         {
             LoadCompressedPalette(gBattleTerrainPalette_Frontier, 0x20, 0x60);
         }
@@ -1544,3 +1549,26 @@ bool8 LoadChosenBattleElement(u8 caseId)
 
     return ret;
 }
+
+void DrawTerrainTypeBattleBackground(void)
+{
+    switch (gFieldStatuses & STATUS_TERRAIN_ANY)
+    {
+    case STATUS_FIELD_GRASSY_TERRAIN:
+        LoadMoveBg(BG_GRASSY_TERRAIN);
+        break;
+    case STATUS_FIELD_MISTY_TERRAIN:
+        LoadMoveBg(BG_MISTY_TERRAIN);
+        break;
+    case STATUS_FIELD_ELECTRIC_TERRAIN:
+        LoadMoveBg(BG_ELECTRIC_TERRAIN);
+        break;
+    case STATUS_FIELD_PSYCHIC_TERRAIN:
+        LoadMoveBg(BG_PSYCHIC_TERRAIN);
+        break;
+    default:
+        DrawMainBattleBackground();
+        break;
+    }
+}
+

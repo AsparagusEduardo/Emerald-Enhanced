@@ -23,7 +23,7 @@ void GetAIPartyIndexes(u32 battlerId, s32 *firstId, s32 *lastId)
     {
         *firstId = 0, *lastId = 6;
     }
-    else if (gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_x800000))
+    else if (gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_TOWER_LINK_MULTI))
     {
         if ((battlerId & BIT_FLANK) == B_FLANK_LEFT)
             *firstId = 0, *lastId = 3;
@@ -137,7 +137,7 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 static bool8 FindMonThatAbsorbsOpponentsMove(void)
 {
     u8 battlerIn1, battlerIn2;
-    u8 absorbingTypeAbility;
+    u16 absorbingTypeAbility;
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
@@ -188,7 +188,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     for (i = firstId; i < lastId; i++)
     {
         u16 species;
-        u8 monAbility;
+        u16 monAbility;
 
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
             continue;
@@ -369,7 +369,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
     for (i = firstId; i < lastId; i++)
     {
         u16 species;
-        u8 monAbility;
+        u16 monAbility;
 
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
             continue;
@@ -769,7 +769,11 @@ static u8 GetAI_ItemType(u16 itemId, const u8 *itemEffect)
         return AI_ITEM_HEAL_HP;
     else if (itemEffect[3] & ITEM3_STATUS_ALL)
         return AI_ITEM_CURE_CONDITION;
+#ifdef ITEM_EXPANSION
     else if ((itemEffect[0] & ITEM0_DIRE_HIT) || itemEffect[1])
+#else
+    else if (itemEffect[0] & (ITEM0_DIRE_HIT | ITEM0_X_ATTACK) || itemEffect[1] != 0 || itemEffect[2] != 0)
+#endif
         return AI_ITEM_X_STAT;
     else if (itemEffect[3] & ITEM3_GUARD_SPEC)
         return AI_ITEM_GUARD_SPECS;
@@ -879,7 +883,8 @@ static bool8 ShouldUseItem(void)
             *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) = 0;
             if (gDisableStructs[gActiveBattler].isFirstTurn == 0)
                 break;
-            if (itemEffects[1] & ITEM1_X_ATTACK)
+        #ifndef ITEM_EXPANSION
+            if (itemEffects[0] & ITEM0_X_ATTACK)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x1;
             if (itemEffects[1] & ITEM1_X_DEFEND)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x2;
@@ -892,7 +897,23 @@ static bool8 ShouldUseItem(void)
             if (itemEffects[1] & ITEM1_X_ACCURACY)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x20;
             if (itemEffects[0] & ITEM0_DIRE_HIT)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x80;
+        #else
+            if (itemEffects[1] & ITEM1_X_ATTACK)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x1;
+            if (itemEffects[1] & ITEM1_X_DEFENSE)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x2;
+            if (itemEffects[1] & ITEM1_X_SPEED)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x4;
+            if (itemEffects[1] & ITEM1_X_SPATK)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x8;
+            if (itemEffects[1] & ITEM1_X_SPDEF)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x10;
+            if (itemEffects[1] & ITEM1_X_ACCURACY)
+                *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x20;
+            if (itemEffects[0] & ITEM0_DIRE_HIT)
                 *(gBattleStruct->AI_itemFlags + gActiveBattler / 2) |= 0x40;
+        #endif
             shouldUse = TRUE;
             break;
         case AI_ITEM_GUARD_SPECS:

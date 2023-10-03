@@ -1,4 +1,8 @@
 raw `
+.set LOCALID_BRIDGE_KECLEON, 30
+.set LOCALID_STEVEN, 31
+.set LOCALID_BRIDGE_KECLEON_SHADOW, 36  @ They use a second object which is identical to Kecleon but has a reflection palette tag for the bridge shadow
+
 Route120_MapScripts:: @ 81F53EC
 	map_script ON_RESUME, Route120_OnResume
 	map_script ON_TRANSITION, Route120_OnTransition
@@ -162,8 +166,8 @@ Route120_EventScript_RemoveBridgeKecleon:: @ 81F5449
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_ne Common_EventScript_NopReturn
-	removeobject 30 @ Invisible Bridge Kecleon
-	removeobject 36 @ Visible Bridge Kecleon
+	removeobject LOCALID_BRIDGE_KECLEON
+	removeobject LOCALID_BRIDGE_KECLEON_SHADOW
 	return
 
 Route120_EventScript_RemoveKecleon:: @ 81F5460
@@ -192,7 +196,7 @@ Route120_EventScript_SetBridgeClearMetatiles:: @ 81F54A3
 	return
 
 Route120_EventScript_SetBridgeKecleonMovement:: @ 81F54C8
-	setobjectmovementtype 36, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_BRIDGE_KECLEON_SHADOW, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 Route120_OnTransition: @ 81F54CD

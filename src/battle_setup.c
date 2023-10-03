@@ -422,6 +422,17 @@ void BattleSetup_StartScriptedWildBattle(void)
     IncrementDailyWildBattles();
 }
 
+void BattleSetup_StartScriptedDoubleWildBattle(void)
+{
+    ScriptContext2_Enable();
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+    IncrementDailyWildBattles();
+}
+
 void BattleSetup_StartLatiBattle(void)
 {
     ScriptContext2_Enable();
@@ -466,7 +477,7 @@ void BattleSetup_StartLegendaryBattle(void)
     if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_SPIRITOMB)
         SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &ability);
 
-    if (IS_ULTRA_BEAST(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)))
+    if (gBaseStats[GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)].flags & F_ULTRA_BEAST)
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE1, MUS_VS_MEW);
 
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
@@ -675,7 +686,7 @@ static void CB2_EndWildBattle(void)
         }
         FlagSet(FLAG_TEMP_C);
         SetMainCallback2(CB2_ReturnToField);
-        gFieldCallback = sub_80AF6F0;
+        gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
     }
 }
 
@@ -1662,7 +1673,7 @@ static const u8 *GetTrainerCantBattleSpeech(void)
 static bool32 HasAtLeastFiveBadges(void)
 {
     u8 count = (CountBadges());
-    
+
     if (count < 5)
         return FALSE;
 

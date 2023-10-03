@@ -2374,7 +2374,7 @@ void AnimTask_TransformMon(u8 taskId)
         else
             position = GetBattlerPosition(gBattleAnimAttacker);
 
-        src = gMonSpritesGfxPtr->sprites[position] + (gBattleMonForms[gBattleAnimAttacker] << 11);
+        src = gMonSpritesGfxPtr->sprites.ptr[position] + (gBattleMonForms[gBattleAnimAttacker] << 11);
         dest = animBg.bgTiles;
         CpuCopy32(src, dest, 0x800);
         LoadBgTiles(1, animBg.bgTiles, 0x800, animBg.tilesOffset);
@@ -5042,7 +5042,6 @@ static void AnimTask_OdorSleuthMovementWaitFinish(u8 taskId)
 
 static void MoveOdorSleuthClone(struct Sprite *sprite)
 {
-    int zero = 0;
     if (++sprite->data[1] > 1)
     {
         sprite->data[1] = 0;

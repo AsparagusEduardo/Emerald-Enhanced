@@ -3077,7 +3077,7 @@ static void DrawPokerusCuredSymbol(struct Pokemon *mon) // This checks if the mo
     ScheduleBgCopyTilemapToVram(3);
 }
 
-static void SetDexNumberColor(u8 isMonShiny)
+static void SetMonPicBackgroundPalette(bool8 isMonShiny)
 {
     if (isMonShiny == 0)
         SetBgTilemapPalette(3, 1, 4, 8, 8, 0);
@@ -3219,12 +3219,12 @@ static void PrintNotEggInfo(void)
         if (!IsMonShiny(mon))
         {
             PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER, gStringVar1, 0, 1, 0, 1);
-            SetDexNumberColor(FALSE);
+            SetMonPicBackgroundPalette(FALSE);
         }
         else
         {
             PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER, gStringVar1, 0, 1, 0, 7);
-            SetDexNumberColor(TRUE);
+            SetMonPicBackgroundPalette(TRUE);
         }
         PutWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER);
     }
@@ -3232,9 +3232,9 @@ static void PrintNotEggInfo(void)
     {
         ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER);
         if (!IsMonShiny(mon))
-            SetDexNumberColor(FALSE);
+            SetMonPicBackgroundPalette(FALSE);
         else
-            SetDexNumberColor(TRUE);
+            SetMonPicBackgroundPalette(TRUE);
     }
     StringCopy(gStringVar1, gText_LevelSymbol);
     ConvertIntToDecimalStringN(gStringVar2, summary->level, STR_CONV_MODE_LEFT_ALIGN, 3);
@@ -3668,7 +3668,7 @@ static void PrintMonOTID(void)
 static void PrintMonAbilityName(void)
 {
     const struct WindowTemplate* template;
-    u8 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
+    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
     switch (VarGet(VAR_HAT_THEME_UI_NUMBER)) {
         case THEME_UI_MODERN:
         case THEME_UI_CLASSIC:
@@ -3684,7 +3684,7 @@ static void PrintMonAbilityName(void)
 static void PrintMonAbilityDescription(void)
 {
     const struct WindowTemplate* template;
-    u8 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
+    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
     switch (VarGet(VAR_HAT_THEME_UI_NUMBER)) {
         case THEME_UI_MODERN:
         case THEME_UI_CLASSIC:
@@ -4701,13 +4701,13 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
     case 0:
         if (gMain.inBattle)
         {
-            HandleLoadSpecialPokePic(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites[1], summary->species2, summary->pid);
+            HandleLoadSpecialPokePic(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites.ptr[1], summary->species2, summary->pid);
         }
         else
         {
             if (gMonSpritesGfxPtr != NULL)
             {
-                HandleLoadSpecialPokePic(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites[1], summary->species2, summary->pid);
+                HandleLoadSpecialPokePic(&gMonFrontPicTable[summary->species2], gMonSpritesGfxPtr->sprites.ptr[1], summary->species2, summary->pid);
             }
             else
             {

@@ -97,7 +97,7 @@ NM10_CrystalOnix::
 	goto_if_ne NM10_CONIXNA
 	msgbox NM10_NotTooWeak
 	waitmoncry
-	setwildbattle SPECIES_CRYSTAL_ONIX, 90, ITEM_LAGGING_TAIL
+	setwildbattle SPECIES_ONIX_CRYSTAL, 90, ITEM_LAGGING_TAIL
 	setflag FLAG_RYU_HIDE_CRYSTALONIX_OW
 	removeobject 1
 	call RyuCheckSetupBoss
